@@ -1,4 +1,18 @@
 /*-----------------------------------*\
+ * #セクションの区切り線スタイル
+\*-----------------------------------*/
+.section-divider {
+    border: none; /* デフォルトの境界線をリセット */
+    
+    /* 線の太さを 3px に、色を濃い色（例: var(--rich-black-fogra-29)）に変更 */
+    border-top: 3px solid var(--gainsboro); /* 少し濃いグレーの太線 */
+    
+    margin-block: 60px; /* 上下に十分な余白をとる */
+    width: 80%; /* 幅を狭くすることで、デザイン性を持たせる */
+    margin-inline: auto;
+}
+
+/*-----------------------------------*\
  * #SPLASH SCREEN (スプラッシュスクリーン)
 \*-----------------------------------*/
 
@@ -433,6 +447,48 @@ body {
   /* ⚠️ 【追加】bodyのトップパディングも調整 */
   body { padding-block-start: 80px; }
 }
+
+/*-----------------------------------*\
+ * #TARGET BANNER (ターゲットバナー)
+\*-----------------------------------*/
+
+.target-banner {
+    background: var(--white); /* 背景はシンプルに白 */
+    text-align: center;
+    /* 上下のパディングを広く取り、独立したブロックに見せる */
+    padding-block: 70px; 
+}
+
+/* 1. メインの見出し: 「ようこそ SNEAK MATCHへ」 */
+.main-welcome-title {
+    /* 画面サイズに応じて大きく表示 (レスポンシブ対応) */
+    font-size: clamp(3rem, 6vw, 5rem); 
+    font-family: var(--ff-josefin-sans);
+    font-weight: 900; /* 極太 */
+    color: var(--rich-black-fogra-29);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+/* 2. ターゲットユーザー向けメッセージ */
+.target-message-text {
+    /* 読みやすいが、存在感のあるサイズ */
+    font-size: clamp(1.8rem, 2.5vw, 2.2rem); 
+    color: var(--onyx); 
+    line-height: 1.6;
+    
+    /* ⚠️ 修正点 1: 幅の制限を緩和または削除 */
+    /* text-align: center; に合わせて幅を広めに設定 */
+    max-width: 1000px; /* 以前より幅を広げる */
+    margin-inline: auto;
+
+    /* ⚠️ 修正点 2: 強制的に空白でのみ改行を許可 */
+    /* これにより「SNEAK」と「MATCH」の間など、英単語の途中での改行を防ぎます */
+    word-break: normal; 
+    overflow-wrap: normal;
+    white-space: normal; /* デフォルトの改行ルールに戻す */
+}
+
 
 /*-----------------------------------*\
  * #ORDER FLOW (注文の流れ)
