@@ -174,6 +174,7 @@ body {
 \*-----------------------------------*/
 
 /* ヘッダー全体: 画面上部に固定 */
+/* ヘッダー全体: 画面上部に固定 */
 .header {
   background: var(--white);
   position: fixed;
@@ -182,10 +183,17 @@ body {
   width: 100%;
   transition: var(--transition-1);
   z-index: 4;
+  /* ⚠️【追加】スクロールしていない時のヘッダー下に薄い境界線を追加 */
+  border-bottom: 1px solid var(--gainsboro); 
 }
 
 /* ヘッダーがスクロールで変化した時の影 */
-.header.active { box-shadow: 0 2px 10px hsla(0, 0%, 0%, 0.1); }
+.header.active { 
+  box-shadow: 0 2px 10px hsla(0, 0%, 0%, 0.1); 
+  /* ⚠️【追加/修正】スクロール中のヘッダーには、影があるためラインを少し濃くするか影に任せます。
+     ここでは、影とは別に明確なラインを維持するため、そのまま border-bottom を残します。*/
+  border-bottom: 1px solid var(--gainsboro); 
+}
 
 /* ヘッダーのコンテナ: ロゴ、ナビゲーション、ボタンの横並び配置 */
 .header .container {
@@ -588,4 +596,131 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
   }
+}
+
+/*-----------------------------------*\
+ * #MAIN FEATURES (メイン機能紹介)
+\*-----------------------------------*/
+
+.main-features {
+    padding-block: 80px; /* 上下のパディング */
+    background: var(--white);
+}
+
+.features-section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: clamp(2.5rem, 5vw, 4rem); /* 大きなタイトル */
+    color: var(--rich-black-fogra-29);
+    font-family: var(--ff-josefin-sans);
+    font-weight: 700;
+}
+
+/* 各機能のアイテム */
+.feature-item {
+    display: flex;
+    flex-direction: column; /* モバイルでは縦並び */
+    gap: 40px;
+    align-items: center; /* 縦並び時に中央寄せ */
+    margin-bottom: 80px; /* 各機能アイテムの下マージン */
+}
+
+/* 交互レイアウト（画像が右に来る場合） */
+.feature-item.reverse-layout {
+    flex-direction: column; /* モバイルでは同じく縦並び */
+}
+
+/* 画像ラッパー (アイコンオーバーレイのため relative に) */
+.feature-image-wrapper {
+    position: relative;
+    max-width: 600px; /* 画像の最大幅 */
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden; /* 角丸のため */
+    box-shadow: 0 10px 30px hsla(0, 0%, 0%, 0.1); /* 画像に影をつけて奥行きを出す */
+    transition: transform 0.3s ease;
+}
+
+.feature-image-wrapper:hover {
+    transform: translateY(-5px); /* ホバーで少し浮き上がる */
+}
+
+.feature-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 画像に重ねるアイコン */
+.feature-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 50px; /* 大きなアイコン */
+    color: var(--white); /* 白いアイコン */
+    background: var(--bittersweet); /* テーマカラーの背景 */
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px hsla(0, 0%, 0%, 0.2);
+    --ionicon-stroke-width: 25px;
+}
+
+/* テキストコンテンツ */
+.feature-content {
+    max-width: 600px; /* テキストの最大幅 */
+    text-align: center; /* モバイルでは中央寄せ */
+}
+
+.feature-title {
+    font-size: clamp(2rem, 4vw, 3rem); /* 機能タイトル */
+    color: var(--rich-black-fogra-29);
+    font-family: var(--ff-josefin-sans);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.feature-description {
+    font-size: var(--fs-5); /* 1.8rem */
+    color: var(--onyx);
+    line-height: 1.7;
+}
+
+/* 各機能間の区切り線 */
+.feature-divider {
+    border: none;
+    border-top: 1px solid var(--gainsboro); /* 細い線 */
+    margin-block: 80px; /* 上下マージン */
+    width: 50%; /* 幅を狭くして上品に */
+    margin-inline: auto;
+}
+
+
+/* #MEDIA QUERIES の調整 (PCサイズで横並びにする) */
+@media (min-width: 992px) {
+    .feature-item {
+        flex-direction: row; /* PCでは横並び */
+        text-align: left; /* テキストを左寄せ */
+        gap: 60px; /* 画像とテキストの間隔 */
+        margin-bottom: 120px; /* PCでの下マージン */
+    }
+
+    /* 交互レイアウト (画像が右に来る場合) */
+    .feature-item.reverse-layout {
+        flex-direction: row-reverse; /* 画像が右、テキストが左 */
+    }
+
+    .feature-content {
+        text-align: left; /* PCでは左寄せ */
+    }
+
+    /* 区切り線は最後の要素には不要な場合があるため、適宜調整 */
+    .feature-item:last-of-type {
+        margin-bottom: 0;
+    }
+
+    /* 区切り線はPCでは少し太くしても良い */
+    .feature-divider {
+        margin-block: 100px;
+        border-top-width: 2px;
+    }
 }
