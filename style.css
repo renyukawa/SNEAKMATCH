@@ -1,14 +1,64 @@
 /*-----------------------------------*\
- * #style.css (ヘッダー部分に限定)
+ * #SPLASH SCREEN (スプラッシュスクリーン)
 \*-----------------------------------*/
 
-/**
- * copyright 2022 codewithsadee
- */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white); /* 背景色を白に設定 */
+    z-index: 9999; /* 他の要素の上に表示 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* 初期は非表示 */
+    visibility: hidden; /* 最初は隠しておく */
+    transition: opacity 1s ease-out, visibility 1s ease-out; /* スプラッシュスクリーン自体のフェードアウト */
+}
 
+/* JSでこのクラスが付くと表示される */
+#splash-screen.is-active {
+    opacity: 1;
+    visibility: visible;
+}
 
+/* フェードアウト後の非表示設定 */
+#splash-screen.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
 
+/* テキストのスタイルとアニメーション */
+.splash-text {
+    font-family: var(--ff-josefin-sans);
+    font-size: 5rem; /* より大きな文字 */
+    font-weight: 700;
+    color: var(--rich-black-fogra-29); /* 濃い色 */
+    opacity: 0; /* テキストも最初は非表示 */
+    animation: fadeInOutText 4s forwards; /* 4秒間のアニメーション */
+}
 
+/* テキストのアニメーション定義 */
+@keyframes fadeInOutText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* 下からふわっと浮き上がる */
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(0); /* フェードイン完了 */
+    }
+    80% {
+        opacity: 1;
+        transform: translateY(0); /* しばらく表示を維持 */
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px); /* 上にふわっと消える */
+    }
+}
 
 /*-----------------------------------*\
  * #CUSTOM PROPERTY
@@ -382,4 +432,104 @@ body {
   
   /* ⚠️ 【追加】bodyのトップパディングも調整 */
   body { padding-block-start: 80px; }
+}
+
+/*-----------------------------------*\
+ * #ORDER FLOW (注文の流れ)
+\*-----------------------------------*/
+
+.order-flow {
+  text-align: center;
+}
+
+/* セクションタイトル */
+.order-flow-title {
+  margin-bottom: 40px;
+  color: var(--rich-black-fogra-29);
+  font-family: var(--ff-josefin-sans);
+  font-weight: var(--fw-600);
+}
+
+/* ステップリスト (モバイルでは縦並び、PCでは横並び) */
+.order-flow-list {
+  display: grid;
+  gap: 30px;
+}
+
+/* ステップカードの基本スタイル */
+.flow-card {
+  padding: 30px 20px;
+  border: 1px solid var(--gainsboro);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.05);
+  transition: var(--transition-1);
+}
+
+/* ホバーエフェクト */
+.flow-card:hover {
+  border-color: var(--bittersweet);
+  transform: translateY(-5px);
+}
+
+/* アイコンと番号のコンテナ */
+.card-icon-wrapper {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  margin-inline: auto;
+  margin-bottom: 20px;
+  background: var(--maximum-blue-green_10);
+  border-radius: 50%;
+}
+
+/* メインアイコンのスタイル */
+.card-icon-wrapper ion-icon {
+  font-size: 30px;
+  color: var(--bittersweet);
+  --ionicon-stroke-width: 30px;
+}
+
+/* ステップ番号 (右上に配置) */
+.step-number {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: var(--bittersweet);
+  color: var(--white);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-700);
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px hsla(0, 0%, 0%, 0.2);
+}
+
+/* カードタイトル */
+.flow-card .card-title {
+  font-size: var(--fs-5);
+  margin-bottom: 10px;
+  color: var(--rich-black-fogra-29);
+}
+
+/* カードの説明テキスト */
+.card-text {
+  color: var(--onyx);
+  line-height: 1.6;
+}
+
+
+/* #MEDIA QUERIES 内に追加 */
+
+@media (min-width: 992px) {
+  
+  /* 992px以上で3列グリッドに切り替え */
+  .order-flow-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
 }
