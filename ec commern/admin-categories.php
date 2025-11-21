@@ -15,7 +15,7 @@ require_once('file/header1.php')
             </nav>
           </div>
           <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
-            <h1 class="h3 text-light mb-0">My orders</h1>
+            <h1 class="h3 text-light mb-0">Products Categories</h1>
           </div>
         </div>
       </div>
@@ -39,7 +39,7 @@ require_once('file/account-sidebar.php')
                   <option>Delayed</option>
                   <option>Canceled</option>
                 </select>
-              </div><a class="btn btn-primary btn-sm d-none d-lg-inline-block" href="login.php"><i class="ci-sign-out me-2"></i>Sign out</a>
+              </div><a class="btn btn-primary btn-sm d-none d-lg-inline-block" href="account-signin.html"><i class="ci-sign-out me-2"></i>Sign out</a>
             </div>
           
           </section>

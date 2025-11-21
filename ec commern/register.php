@@ -8,6 +8,7 @@ if(isset($_POST['signUp'])){
     $email=$_POST['email'];
     $password=$_POST['password'];
     $password=($password);
+    
 
      $stmt = $conn->prepare("SELECT * FROM customers WHERE email = ?");
 $stmt->execute([$email]);
@@ -51,7 +52,7 @@ if($stmt->rowCount() > 0){
     // Line 44
     $_SESSION['email'] = $row['email'];
     // Line 45
-    header("Location: shop-grid-ft.html");
+    header("Location: shop-grid-ft.php");
     // Line 46
     exit();
 }
