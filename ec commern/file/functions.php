@@ -3,7 +3,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-$conn = new mysqli('192.168.25.125', 'nishida', 'security', 'kutu');
+$conn = new mysqli('localhost', 'nishida', 'security', 'kutu');
 
 function alert($type, $message){
     $_SESSION['alert']['type'] = $type;

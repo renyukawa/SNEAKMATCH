@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>SNEAKMATCH - ユーザー登録</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+
+    <!-- 
+        ヘッダー、ナビゲーション 
+    -->
+    <header class="header" data-header>
+        <div class="container">
+
+            <div class="overlay" data-overlay></div>
+
+            <a href="index.html" class="logo">
+                <img src="images/logo (1).png" width="90" height="50" alt="Footcap logo">
+            </a>
+
+            <button class="nav-open-btn" data-nav-open-btn aria-label="Open Menu">
+                <ion-icon name="menu-outline"></ion-icon>
+            </button>
+
+            <nav class="navbar" data-navbar>
+
+                <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+                    <ion-icon name="close-outline"></ion-icon>
+                </button>
+
+                <a href="#" class="logo">
+                    <img src="images/logo.svg" width="190" height="50" alt="Footcap logo">
+                </a>
+
+                <ul class="navbar-list">
+                    <li class="navbar-item">
+                        <a href="#" class="navbar-link">Home</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="navbar-link">About</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="navbar-link">Products</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="navbar-link">Shop</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="navbar-link">Blog</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="navbar-link">Contact</a>
+                    </li>
+                </ul>
+
+                <ul class="nav-action-list">
+                    <li>
+                        <button class="nav-action-btn">
+                            <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+                            <span class="nav-action-text">Search</span>
+                        </button>
+                    </li>
+                    <li>
+                        <a href="register.html" class="nav-action-btn">
+                            <ion-icon name="person-outline"></ion-icon>
+                            <span class="nav-action-text">Login / <strong>Register</strong></span>
+                        </a>
+                    </li>
+                    <li>
+                        <button class="nav-action-btn">
+                            <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                            <span class="nav-action-text">Wishlist</span>
+                            <data class="nav-action-badge" value="5" aria-hidden="true">5</data>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="nav-action-btn">
+                            <ion-icon name="bag-outline" aria-hidden="true"></ion-icon>
+                            <data class="nav-action-text" value="318.00">Basket: <strong>$318.00</strong></data>
+                            <data class="nav-action-badge" value="4" aria-hidden="true">4</data>
+                        </button>
+                    </li>
+                </ul>
+
+            </nav>
+
+        </div>
+    </header>
+
+    
+    <main>
+        
+        <section class="registration section">
+            <div class="container">
+                <div class="form-wrapper">
+                    <h2 class="h2 form-title">新規ユーザー登録</h2>
+                    <p class="form-subtitle">SNEAK MATCHを始めるには、以下の情報を入力してください。</p>
+
+                    <form action="#" method="post" class="register-form">
+                        
+                        <div class="input-group">
+                            <label for="name" class="input-label">お名前</label>
+                            <input type="text" id="name" name="name" placeholder="山田 太郎" required class="input-field">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="email" class="input-label">メールアドレス</label>
+                            <input type="email" id="email" name="email" placeholder="example@sneaker.com" required class="input-field">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="password" class="input-label">パスワード</label>
+                            <input type="password" id="password" name="password" placeholder="8文字以上の英数字" required class="input-field">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="confirm-password" class="input-label">パスワード（確認用）</label>
+                            <input type="password" id="confirm-password" name="confirm-password" required class="input-field">
+                        </div>
+
+                        <div class="terms-group">
+                            <input type="checkbox" id="terms" name="terms" required class="checkbox-field">
+                            <label for="terms" class="checkbox-label">
+                                <a href="#" class="terms-link">利用規約</a>と<a href="#" class="terms-link">プライバシーポリシー</a>に同意します。
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="register-btn btn-primary">登録する</button>
+
+                    </form>
+
+                    <div class="login-prompt">
+                        <p>すでにアカウントをお持ちですか？ <a href="login.html" class="login-link">ログインはこちら</a></p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+    </body>
+</html>

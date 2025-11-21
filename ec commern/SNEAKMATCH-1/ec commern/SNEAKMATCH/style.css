@@ -1,0 +1,842 @@
+/*-----------------------------------*\
+ * #セクションの区切り線スタイル
+\*-----------------------------------*/
+.section-divider {
+    border: none; /* デフォルトの境界線をリセット */
+    
+    /* 線の太さを 3px に、色を濃い色（例: var(--rich-black-fogra-29)）に変更 */
+    border-top: 3px solid var(--gainsboro); /* 少し濃いグレーの太線 */
+    
+    margin-block: 60px; /* 上下に十分な余白をとる */
+    width: 80%; /* 幅を狭くすることで、デザイン性を持たせる */
+    margin-inline: auto;
+}
+
+/*-----------------------------------*\
+ * #SPLASH SCREEN (スプラッシュスクリーン)
+\*-----------------------------------*/
+
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white); /* 背景色を白に設定 */
+    z-index: 9999; /* 他の要素の上に表示 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* 初期は非表示 */
+    visibility: hidden; /* 最初は隠しておく */
+    transition: opacity 1s ease-out, visibility 1s ease-out; /* スプラッシュスクリーン自体のフェードアウト */
+}
+
+/* JSでこのクラスが付くと表示される */
+#splash-screen.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* フェードアウト後の非表示設定 */
+#splash-screen.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* テキストのスタイルとアニメーション */
+.splash-text {
+    font-family: var(--ff-josefin-sans);
+    font-size: 5rem; /* より大きな文字 */
+    font-weight: 700;
+    color: var(--rich-black-fogra-29); /* 濃い色 */
+    opacity: 0; /* テキストも最初は非表示 */
+    animation: fadeInOutText 4s forwards; /* 4秒間のアニメーション */
+}
+
+/* テキストのアニメーション定義 */
+@keyframes fadeInOutText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* 下からふわっと浮き上がる */
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(0); /* フェードイン完了 */
+    }
+    80% {
+        opacity: 1;
+        transform: translateY(0); /* しばらく表示を維持 */
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px); /* 上にふわっと消える */
+    }
+}
+
+/*-----------------------------------*\
+ * #CUSTOM PROPERTY
+\*-----------------------------------*/
+/* ヘッダーの色、フォント、トランジションの定義 */
+
+:root {
+
+  /**
+   * colors
+   */
+
+  --maximum-blue-green_10: hsla(185, 75%, 45%, 0.1);
+  --rich-black-fogra-29: hsl(217, 28%, 9%);
+  --gainsboro: hsl(0, 0%, 88%);
+  --bittersweet: hsl(5, 100%, 69%);
+  --salmon: hsl(5, 100%, 73%);
+  --white: hsl(0, 0%, 100%);
+  --onyx: hsl(0, 0%, 27%);
+
+  /**
+   * typography
+   */
+
+  --ff-roboto: 'Roboto', sans-serif;
+  --ff-josefin-sans: 'Josefin Sans', sans-serif;
+
+  --fs-5: 1.8rem;
+  --fs-6: 1.6rem;
+  --fs-8: 1.2rem;
+
+  --fw-500: 500;
+
+  /**
+   * transition
+   */
+
+  --transition-1: 0.25s ease;
+  --cubic-out: cubic-bezier(0.51, 0.03, 0.64, 0.28);
+  --cubic-in: cubic-bezier(0.33, 0.85, 0.56, 1.02);
+
+}
+
+
+
+
+
+/*-----------------------------------*\
+ * #RESET
+\*-----------------------------------*/
+/* 全要素のリセット */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li { list-style: none; }
+
+a { text-decoration: none; }
+
+a,
+img,
+span,
+button,
+ion-icon { display: block; }
+
+button,
+input {
+  font: inherit;
+  background: none;
+  border: none;
+}
+
+html {
+  font-family: var(--ff-josefin-sans);
+  font-size: 10px;
+}
+
+body {
+  background: var(--white);
+  font-size: 1.6rem;
+  /* ヘッダーの初期の高さ（モバイル想定）に合わせて、コンテンツの開始位置を調整 */
+  padding-block-start: 90px; 
+}
+
+/*-----------------------------------*\
+ * #REUSED STYLE
+\*-----------------------------------*/
+/* コンテンツの最大幅と左右パディング */
+
+.container { padding-inline: 15px; } 
+
+/*-----------------------------------*\
+ * #HEADER
+\*-----------------------------------*/
+
+/* ヘッダー全体: 画面上部に固定 */
+/* ヘッダー全体: 画面上部に固定 */
+.header {
+  background: var(--white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: var(--transition-1);
+  z-index: 4;
+  /* ⚠️【追加】スクロールしていない時のヘッダー下に薄い境界線を追加 */
+  border-bottom: 1px solid var(--gainsboro); 
+}
+
+/* ヘッダーがスクロールで変化した時の影 */
+.header.active { 
+  box-shadow: 0 2px 10px hsla(0, 0%, 0%, 0.1); 
+  /* ⚠️【追加/修正】スクロール中のヘッダーには、影があるためラインを少し濃くするか影に任せます。
+     ここでは、影とは別に明確なラインを維持するため、そのまま border-bottom を残します。*/
+  border-bottom: 1px solid var(--gainsboro); 
+}
+
+/* ヘッダーのコンテナ: ロゴ、ナビゲーション、ボタンの横並び配置 */
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* ヘッダーの初期の上下パディング（モバイル/小画面用） */
+  padding-block: 20px; 
+}
+
+/* モバイルメニューを開くボタン */
+.nav-open-btn {
+  font-size: 30px;
+  background: var(--bittersweet);
+  color: var(--white);
+  padding: 8px;
+}
+
+.nav-open-btn:is(:hover, :focus) { background: var(--salmon); }
+.nav-open-btn ion-icon { --ionicon-stroke-width: 40px; }
+
+/* モバイル用ナビゲーションメニューの初期状態 (非表示) */
+.navbar {
+  background: var(--white);
+  position: fixed;
+  top: 0;
+  left: -280px; /* 画面左外に隠す */
+  width: 100%;
+  max-width: 270px;
+  height: 100%;
+  border-right: 3px solid var(--rich-black-fogra-29);
+  font-family: var(--ff-roboto);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  z-index: 2;
+  visibility: hidden;
+  transition: 0.25s var(--cubic-out);
+}
+
+/* JSで active クラスが付いた時にメニューを表示 */
+.navbar.active {
+  visibility: visible;
+  transform: translateX(280px);
+  transition: 0.5s var(--cubic-in);
+}
+
+/* モバイルメニュー内の閉じるボタン */
+.nav-close-btn {
+  color: var(--rich-black-fogra-29);
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 13px;
+  font-size: 25px;
+  transition: var(--transition-1);
+}
+
+.nav-close-btn ion-icon { --ionicon-stroke-width: 55px; }
+.nav-close-btn:is(:hover, :focus) { color: var(--bittersweet); }
+
+/* モバイルメニュー内のロゴ */
+.navbar .logo {
+  background: var(--maximum-blue-green_10);
+  padding-block: 50px 40px;
+}
+
+.navbar .logo img { margin-inline: auto; }
+
+/* ナビゲーションリスト、アクションリストの共通マージン */
+.navbar-list,
+.nav-action-list { margin: 30px; }
+
+/* メインナビゲーションリンク一覧 */
+.navbar-list {
+  padding: 20px;
+  border-bottom: 1px solid var(--gainsboro);
+}
+
+.navbar-link {
+  color: var(--rich-black-fogra-29);
+  padding-block: 10px;
+  transition: var(--transition-1);
+}
+
+.navbar-link:is(:hover, :focus) { color: var(--bittersweet); }
+
+.navbar-item:not(:last-child) { border-bottom: 1px solid var(--gainsboro); }
+
+/* モバイル時: 検索ボタンは非表示 */
+.nav-action-list > li:first-child { display: none; }
+
+/* アクションボタン（アイコン＋テキスト） */
+.nav-action-btn {
+  color: var(--rich-black-fogra-29);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding-block: 10px;
+  transition: var(--transition-1);
+}
+
+.nav-action-btn:is(:hover, :focus) { color: var(--bittersweet); }
+
+.nav-action-btn ion-icon {
+  font-size: 22px;
+  --ionicon-stroke-width: 25px;
+}
+
+.nav-action-text strong {
+  font-weight: initial;
+  color: var(--bittersweet);
+}
+
+/* カートやお気に入りなどのバッジ（件数表示） */
+.nav-action-badge {
+  margin-left: auto;
+  font-size: var(--fs-8);
+  background: var(--bittersweet);
+  color: var(--white);
+  width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+
+/* モバイルメニュー展開時の背景オーバーレイ */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: hsla(0, 0%, 0%, 0.6);
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition-1);
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+
+
+
+
+/*-----------------------------------*\
+ * #MEDIA QUERIES (ヘッダー関連のみ)
+\*-----------------------------------*/
+
+/**
+ * responsive for larger than 575px screen
+ */
+
+@media (min-width: 575px) {
+
+  /* コンテナ幅の調整 */
+  .container {
+    max-width: 650px;
+    width: 100%;
+    margin-inline: auto;
+  }
+}
+
+
+/**
+ * responsive for larger than 768px screen
+ */
+
+@media (min-width: 768px) {
+
+  /* コンテナ幅の調整 */
+  .container { max-width: 720px; }
+}
+
+
+/**
+ * responsive for larger than 992px screen
+ */
+
+@media (min-width: 992px) {
+
+  /* コンテナ幅の調整 */
+  .container { max-width: 970px; }
+
+  /* * ヘッダーのサイズ調整とPC表示への切り替え 
+   * ヘッダーの高さを元のサイトに合わせて再調整 
+   */
+  
+  /* ⚠️ 【再修正】PCでのヘッダーの上下パディング */
+  .header .container { padding-block: 15px; }
+  
+  /* ⚠️ 【再修正】bodyのトップパディングもヘッダーの新しい高さに合わせて調整 */
+  body { padding-block-start: 80px; }
+
+
+  /* モバイルUIを非表示 */
+  .nav-open-btn,
+  .nav-close-btn,
+  .navbar .logo,
+  .nav-action-text,
+  .overlay { display: none; }
+
+  /* ナビゲーション全体のスタイルリセットと横並び化 */
+  .navbar,
+  .navbar-list,
+  .nav-action-list { all: unset; }
+
+  .navbar-item:not(:last-child) { border: none; }
+
+  .navbar-list,
+  .nav-action-list { display: flex; }
+
+  .nav-action-list { gap: 20px; }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  .navbar-list {
+    margin-inline: auto;
+    gap: 35px;
+  }
+
+  .navbar-link {
+    font-family: var(--ff-roboto);
+    font-weight: var(--fw-500);
+  }
+
+  /* PCでは検索ボタンを表示 */
+  .nav-action-list > li:first-child { display: block; }
+
+  .nav-action-btn { position: relative; }
+
+  /* バッジの位置調整 */
+  .nav-action-badge {
+    position: absolute;
+    top: 5px;
+    right: -12px;
+  }
+}
+
+
+/**
+ * responsive for larger than 1200px screen
+ */
+
+@media (min-width: 1200px) {
+
+  /* コンテナ幅の調整 */
+  .container { max-width: 1280px; }
+  
+  /* ⚠️ 【追加】1200px以上でもヘッダーの上下パディングを調整 */
+  .header .container { padding-block: 15px; }
+  
+  /* ⚠️ 【追加】bodyのトップパディングも調整 */
+  body { padding-block-start: 80px; }
+}
+
+/*-----------------------------------*\
+ * #TARGET BANNER (ターゲットバナー)
+\*-----------------------------------*/
+
+.target-banner {
+    background: var(--white); /* 背景はシンプルに白 */
+    text-align: center;
+    /* 上下のパディングを広く取り、独立したブロックに見せる */
+    padding-block: 70px; 
+}
+
+/* 1. メインの見出し: 「ようこそ SNEAK MATCHへ」 */
+.main-welcome-title {
+    /* 画面サイズに応じて大きく表示 (レスポンシブ対応) */
+    font-size: clamp(3rem, 6vw, 5rem); 
+    font-family: var(--ff-josefin-sans);
+    font-weight: 900; /* 極太 */
+    color: var(--rich-black-fogra-29);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+/* 2. ターゲットユーザー向けメッセージ */
+.target-message-text {
+    /* 読みやすいが、存在感のあるサイズ */
+    font-size: clamp(1.8rem, 2.5vw, 2.2rem); 
+    color: var(--onyx); 
+    line-height: 1.6;
+    
+    /* ⚠️ 修正点 1: 幅の制限を緩和または削除 */
+    /* text-align: center; に合わせて幅を広めに設定 */
+    max-width: 1000px; /* 以前より幅を広げる */
+    margin-inline: auto;
+
+    /* ⚠️ 修正点 2: 強制的に空白でのみ改行を許可 */
+    /* これにより「SNEAK」と「MATCH」の間など、英単語の途中での改行を防ぎます */
+    word-break: normal; 
+    overflow-wrap: normal;
+    white-space: normal; /* デフォルトの改行ルールに戻す */
+}
+
+
+/*-----------------------------------*\
+ * #ORDER FLOW (注文の流れ)
+\*-----------------------------------*/
+
+.order-flow {
+  text-align: center;
+}
+
+/* セクションタイトル */
+.order-flow-title {
+  margin-bottom: 40px;
+  color: var(--rich-black-fogra-29);
+  font-family: var(--ff-josefin-sans);
+  font-weight: var(--fw-600);
+}
+
+/* ステップリスト (モバイルでは縦並び、PCでは横並び) */
+.order-flow-list {
+  display: grid;
+  gap: 30px;
+}
+
+/* ステップカードの基本スタイル */
+.flow-card {
+  padding: 30px 20px;
+  border: 1px solid var(--gainsboro);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.05);
+  transition: var(--transition-1);
+}
+
+/* ホバーエフェクト */
+.flow-card:hover {
+  border-color: var(--bittersweet);
+  transform: translateY(-5px);
+}
+
+/* アイコンと番号のコンテナ */
+.card-icon-wrapper {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  margin-inline: auto;
+  margin-bottom: 20px;
+  background: var(--maximum-blue-green_10);
+  border-radius: 50%;
+}
+
+/* メインアイコンのスタイル */
+.card-icon-wrapper ion-icon {
+  font-size: 30px;
+  color: var(--bittersweet);
+  --ionicon-stroke-width: 30px;
+}
+
+/* ステップ番号 (右上に配置) */
+.step-number {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: var(--bittersweet);
+  color: var(--white);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-700);
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px hsla(0, 0%, 0%, 0.2);
+}
+
+/* カードタイトル */
+.flow-card .card-title {
+  font-size: var(--fs-5);
+  margin-bottom: 10px;
+  color: var(--rich-black-fogra-29);
+}
+
+/* カードの説明テキスト */
+.card-text {
+  color: var(--onyx);
+  line-height: 1.6;
+}
+
+
+/* #MEDIA QUERIES 内に追加 */
+
+@media (min-width: 992px) {
+  
+  /* 992px以上で3列グリッドに切り替え */
+  .order-flow-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+}
+
+/*-----------------------------------*\
+ * #MAIN FEATURES (メイン機能紹介)
+\*-----------------------------------*/
+
+.main-features {
+    padding-block: 80px; /* 上下のパディング */
+    background: var(--white);
+}
+
+.features-section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: clamp(2.5rem, 5vw, 4rem); /* 大きなタイトル */
+    color: var(--rich-black-fogra-29);
+    font-family: var(--ff-josefin-sans);
+    font-weight: 700;
+}
+
+/* 各機能のアイテム */
+.feature-item {
+    display: flex;
+    flex-direction: column; /* モバイルでは縦並び */
+    gap: 40px;
+    align-items: center; /* 縦並び時に中央寄せ */
+    margin-bottom: 80px; /* 各機能アイテムの下マージン */
+}
+
+/* 交互レイアウト（画像が右に来る場合） */
+.feature-item.reverse-layout {
+    flex-direction: column; /* モバイルでは同じく縦並び */
+}
+
+/* 画像ラッパー (アイコンオーバーレイのため relative に) */
+.feature-image-wrapper {
+    position: relative;
+    max-width: 600px; /* 画像の最大幅 */
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden; /* 角丸のため */
+    box-shadow: 0 10px 30px hsla(0, 0%, 0%, 0.1); /* 画像に影をつけて奥行きを出す */
+    transition: transform 0.3s ease;
+}
+
+.feature-image-wrapper:hover {
+    transform: translateY(-5px); /* ホバーで少し浮き上がる */
+}
+
+.feature-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 画像に重ねるアイコン */
+.feature-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 50px; /* 大きなアイコン */
+    color: var(--white); /* 白いアイコン */
+    background: var(--bittersweet); /* テーマカラーの背景 */
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px hsla(0, 0%, 0%, 0.2);
+    --ionicon-stroke-width: 25px;
+}
+
+/* テキストコンテンツ */
+.feature-content {
+    max-width: 600px; /* テキストの最大幅 */
+    text-align: center; /* モバイルでは中央寄せ */
+}
+
+.feature-title {
+    font-size: clamp(2rem, 4vw, 3rem); /* 機能タイトル */
+    color: var(--rich-black-fogra-29);
+    font-family: var(--ff-josefin-sans);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.feature-description {
+    font-size: var(--fs-5); /* 1.8rem */
+    color: var(--onyx);
+    line-height: 1.7;
+}
+
+/* 各機能間の区切り線 */
+.feature-divider {
+    border: none;
+    border-top: 1px solid var(--gainsboro); /* 細い線 */
+    margin-block: 80px; /* 上下マージン */
+    width: 50%; /* 幅を狭くして上品に */
+    margin-inline: auto;
+}
+
+
+/* #MEDIA QUERIES の調整 (PCサイズで横並びにする) */
+@media (min-width: 992px) {
+    .feature-item {
+        flex-direction: row; /* PCでは横並び */
+        text-align: left; /* テキストを左寄せ */
+        gap: 60px; /* 画像とテキストの間隔 */
+        margin-bottom: 120px; /* PCでの下マージン */
+    }
+
+    /* 交互レイアウト (画像が右に来る場合) */
+    .feature-item.reverse-layout {
+        flex-direction: row-reverse; /* 画像が右、テキストが左 */
+    }
+
+    .feature-content {
+        text-align: left; /* PCでは左寄せ */
+    }
+
+    /* 区切り線は最後の要素には不要な場合があるため、適宜調整 */
+    .feature-item:last-of-type {
+        margin-bottom: 0;
+    }
+
+    /* 区切り線はPCでは少し太くしても良い */
+    .feature-divider {
+        margin-block: 100px;
+        border-top-width: 2px;
+    }
+}
+
+/*-----------------------------------*\
+ * #REGISTRATION (ユーザー登録フォーム)
+\*-----------------------------------*/
+
+.registration {
+    padding-block: 80px;
+    background: var(--cultured); /* 薄い背景で目立たせる */
+}
+
+.form-wrapper {
+    max-width: 450px; /* フォームの幅を制限して、中央にまとめる */
+    margin-inline: auto;
+    padding: 30px;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px hsla(0, 0%, 0%, 0.05);
+}
+
+.form-title {
+    text-align: center;
+    font-size: var(--fs-3);
+    margin-bottom: 5px;
+    font-family: var(--ff-josefin-sans);
+}
+
+.form-subtitle {
+    text-align: center;
+    color: var(--onyx);
+    font-size: var(--fs-6);
+    margin-bottom: 30px;
+}
+
+/* フォームグループ */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-label {
+    display: block;
+    color: var(--rich-black-fogra-29);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-500);
+    margin-bottom: 8px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--gainsboro);
+    border-radius: 4px;
+    font-size: var(--fs-6);
+    transition: border-color 0.2s;
+}
+
+.input-field:focus {
+    border-color: var(--bittersweet);
+    outline: none;
+    box-shadow: 0 0 0 1px var(--bittersweet);
+}
+
+/* 利用規約の同意チェックボックス */
+.terms-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.checkbox-field {
+    min-width: 18px;
+    height: 18px;
+    margin-top: 3px;
+    /* デフォルトのチェックボックスを非表示にし、カスタムスタイルを適用する場合はここを調整 */
+}
+
+.checkbox-label {
+    font-size: var(--fs-7);
+    color: var(--onyx);
+    line-height: 1.5;
+}
+
+.terms-link {
+    color: var(--bittersweet);
+    font-weight: var(--fw-600);
+    transition: color 0.2s;
+}
+.terms-link:hover {
+    color: var(--salmon);
+}
+
+/* 登録ボタン */
+.register-btn {
+    width: 100%;
+    text-transform: uppercase;
+    font-family: var(--ff-josefin-sans);
+    font-weight: var(--fw-700);
+    padding: 15px 25px;
+}
+
+/* ログインへの誘導 */
+.login-prompt {
+    text-align: center;
+    margin-top: 25px;
+    font-size: var(--fs-7);
+    color: var(--onyx);
+}
+
+.login-link {
+    color: var(--bittersweet);
+    font-weight: var(--fw-600);
+    transition: color 0.2s;
+}
+.login-link:hover {
+    color: var(--salmon);
+}
