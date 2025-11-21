@@ -1,10 +1,15 @@
 <?php
 
-$db_name = 'mysql:host=localhost;dbname=kutu';
-$user_name = 'nishida';
-$user_password = 'security';
+//$db_name = '192.168.25.125;dbname=kutu';
+//$user_name = 'nishida';
+//$user_password = 'security';
 
-$conn = new PDO($db_name, $user_name, $user_password);
+$db_host = '192.168.25.125'; // ★他のPCのIPアドレス
+$db_name = 'kutu';          // ★データベース名が 'kutu' であると仮定
+$user_name = 'nishida';     // ★サーバー側で設定されているユーザー名
+$user_password = 'security'; // ★サーバー側のパスワード（設定されていなければ空 ''）
+
+$conn = new PDO("mysql:host=$db_host;dbname=$db_name", $user_name, $user_password);
 
 if ($conn) {
     echo "";
