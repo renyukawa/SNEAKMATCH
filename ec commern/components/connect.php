@@ -1,9 +1,5 @@
 <?php
 
-//$db_name = '192.168.25.125;dbname=kutu';
-//$user_name = 'nishida';
-//$user_password = 'security';
-
 $db_host = '192.168.25.125'; // ★他のPCのIPアドレス
 $db_name = 'kutu';          // ★データベース名が 'kutu' であると仮定
 $user_name = 'nishida';     // ★サーバー側で設定されているユーザー名
