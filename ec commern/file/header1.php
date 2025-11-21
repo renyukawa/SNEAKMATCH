@@ -1,3 +1,6 @@
+<?php
+require_once('file/functions.php')
+?>
 <!DOCTYPE html>
 <html lang="en">
   
@@ -257,10 +260,10 @@
         <div class="navbar-sticky bg-light">
     <div class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-            <a class="navbar-brand d-none d-sm-block flex-shrink-0" href="homepage.html">
+            <a class="navbar-brand d-none d-sm-block flex-shrink-0" href="homepage.php">
                 <img src="img/logo1.png" width="290" alt="Snekatch">
             </a>
-            <a class="navbar-brand d-sm-none flex-shrink-0 me-2" href="homepage.html">
+            <a class="navbar-brand d-sm-none flex-shrink-0 me-2" href="homepage.php">
                 <img src="img/logo1.png" width="174" alt="Snekatch">
             </a>
             <div class="input-group d-none d-lg-flex mx-4">
@@ -269,9 +272,25 @@
               <div class="navbar-toolbar d-flex flex-shrink-0 align-items-center">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"><span class="navbar-toggler-icon"></span></button><a class="navbar-tool navbar-stuck-toggler" href="#"><span class="navbar-tool-tooltip">Expand menu</span>
                   <div class="navbar-tool-icon-box"><i class="navbar-tool-icon ci-menu"></i></div></a><a class="navbar-tool d-none d-lg-flex" href="account-wishlist.html"><span class="navbar-tool-tooltip">Wishlist</span>
-                  <div class="navbar-tool-icon-box"><i class="navbar-tool-icon ci-heart"></i></div></a><a class="navbar-tool ms-1 ms-lg-0 me-n1 me-lg-2" href="#signin-modal" data-bs-toggle="modal">
+                  <div class="navbar-tool-icon-box"><i class="navbar-tool-icon ci-heart"></i></div></a>
+                    <?php if (is_logged_in()) { ?>
+                    <a class="navbar-tool ms-1 ms-lg-0 me-n1 me-lg-2" href="account-orders.php">
+                    <?php } else { ?>
+                    <a class="navbar-tool ms-1 ms-lg-0 me-n1 me-lg-2" href="#signin-modal" data-bs-toggle="modle">
+                    <?php } ?>
+                  
+                  
+                  <a class="navbar-tool ms-1 ms-lg-0 me-n1 me-lg-2" href="#signin-modal" data-bs-toggle="modal">
                   <div class="navbar-tool-icon-box"><i class="navbar-tool-icon ci-user"></i></div>
-                  <div class="navbar-tool-text ms-n3"><small>Hello, Sign in</small>My Account</div></a>
+                  <div class="navbar-tool-text ms-n3">
+                    <?php if (is_logged_in()) { ?>
+                        <small>Hello, <?= $_SESSION['user']['first_name']?></small>
+                    <?php } else { ?>
+                        <small>Hello, Sign in</small>
+                    <?php } ?>
+                    My Account
+                    </div>
+                  </a>
                 <div class="navbar-tool dropdown ms-3"><a class="navbar-tool-icon-box bg-secondary dropdown-toggle" href="shop-cart.html"><span class="navbar-tool-label">4</span><i class="navbar-tool-icon ci-cart"></i></a><a class="navbar-tool-text" href="shop-cart.html"><small>My Cart</small>$265.00</a>
                   <!-- Cart dropdown-->
                   <div class="dropdown-menu dropdown-menu-end">
@@ -366,6 +385,9 @@
                           </div>
                         </div>
                       </div>
+
+
+
                       <div class="d-flex flex-wrap flex-sm-nowrap">
                         <div class="mega-dropdown-column pt-4 px-2 px-lg-3">
                           <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="#"><img src="img/shop/departments/04.jpg" alt="Furniture"></a>
@@ -404,111 +426,10 @@
                 <!-- Primary menu-->
                 <ul class="navbar-nav">
                   <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home</a>
-                    <ul class="dropdown-menu">
-                      <li class="dropdown position-static mb-0"><a class="dropdown-item border-bottom py-2" href="homepage.html"><span class="d-block text-heading">Marketplace<span class="badge bg-danger ms-1">NEW</span></span><small class="d-block text-muted">NFTs, Multi-vendor, Auctions</small></a>
-                        <div class="dropdown-menu h-100 animation-none mt-0 p-3"><a class="d-block" href="homepage.html" style="width: 250px;"><img src="img/home/preview/th08.jpg" alt="NFT Marketplace"></a></div>
-                      </li>
-                      <li class="dropdown position-static mb-0"><a class="dropdown-item py-2 border-bottom" href="home-fashion-store-v1.html"><span class="d-block text-heading">Fashion Store v.1</span><small class="d-block text-muted">Classic shop layout</small></a>
-                        <div class="dropdown-menu h-100 animation-none mt-0 p-3"><a class="d-block" href="home-fashion-store-v1.html" style="width: 250px;"><img src="img/home/preview/th01.jpg" alt="Fashion Store v.1"></a></div>
-                      </li>
-                      <li class="dropdown position-static mb-0"><a class="dropdown-item py-2 border-bottom" href="home-electronics-store.html"><span class="d-block text-heading">Electronics Store</span><small class="d-block text-muted">Slider + Promo banners</small></a>
-                        <div class="dropdown-menu h-100 animation-none mt-0 p-3"><a class="d-block" href="home-electronics-store.html" style="width: 250px;"><img src="img/home/preview/th03.jpg" alt="Electronics Store"></a></div>
-                      </li>
-                      <li class="dropdown position-static mb-0"><a class="dropdown-item py-2 border-bottom" href="home-marketplace.html"><span class="d-block text-heading">Marketplace</span><small class="d-block text-muted">Multi-vendor, digital goods</small></a>
-                        <div class="dropdown-menu h-100 animation-none mt-0 p-3"><a class="d-block" href="home-marketplace.html" style="width: 250px;"><img src="img/home/preview/th04.jpg" alt="Marketplace"></a></div>
-                      </li>
-                      <li class="dropdown position-static mb-0"><a class="dropdown-item py-2 border-bottom" href="home-grocery-store.html"><span class="d-block text-heading">Grocery Store</span><small class="d-block text-muted">Full width + Side menu</small></a>
-                        <div class="dropdown-menu h-100 animation-none mt-0 p-3"><a class="d-block" href="home-grocery-store.html" style="width: 250px;"><img src="img/home/preview/th06.jpg" alt="Grocery Store"></a></div>
-                      </li>
-                      <li class="dropdown position-static mb-0"><a class="dropdown-item py-2 border-bottom" href="home-food-delivery.html"><span class="d-block text-heading">Food Delivery Service</span><small class="d-block text-muted">Food &amp; Beverages delivery</small></a>
-                        <div class="dropdown-menu h-100 animation-none mt-0 p-3"><a class="d-block" href="home-food-delivery.html" style="width: 250px;"><img src="img/home/preview/th07.jpg" alt="Food Delivery Service"></a></div>
-                      </li>
-                      <li class="dropdown position-static mb-0"><a class="dropdown-item py-2 border-bottom" href="home-fashion-store-v2.html"><span class="d-block text-heading">Fashion Store v.2</span><small class="d-block text-muted">Slider + Featured categories</small></a>
-                        <div class="dropdown-menu h-100 animation-none mt-0 p-3"><a class="d-block" href="home-fashion-store-v2.html" style="width: 250px;"><img src="img/home/preview/th02.jpg" alt="Fashion Store v.2"></a></div>
-                      </li>
-                      <li class="dropdown position-static mb-0"><a class="dropdown-item py-2" href="home-single-store.html"><span class="d-block text-heading">Single Product Store</span><small class="d-block text-muted">Single product / mono brand</small></a>
-                        <div class="dropdown-menu h-100 animation-none mt-0 p-3"><a class="d-block" href="home-single-store.html" style="width: 250px;"><img src="img/home/preview/th05.jpg" alt="Single Product / Brand Store"></a></div>
-                      </li>
-                    </ul>
+                   
                   </li>
                   <li class="nav-item dropdown active"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Shop</a>
-                    <div class="dropdown-menu p-0">
-                      <div class="d-flex flex-wrap flex-sm-nowrap px-2">
-                        <div class="mega-dropdown-column pt-1 pt-lg-4 pb-4 px-2 px-lg-3">
-                          <div class="widget widget-links mb-4">
-                            <h6 class="fs-base mb-3">Shop layouts</h6>
-                            <ul class="widget-list">
-                              <li class="widget-list-item"><a class="widget-list-link" href="shop-grid-ls.html">Shop Grid - Left Sidebar</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="shop-grid-rs.html">Shop Grid - Right Sidebar</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="shop-grid-ft.html">Shop Grid - Filters on Top</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="shop-list-ls.html">Shop List - Left Sidebar</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="shop-list-rs.html">Shop List - Right Sidebar</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="shop-list-ft.html">Shop List - Filters on Top</a></li>
-                            </ul>
-                          </div>
-                          <div class="widget widget-links mb-4">
-                            <h6 class="fs-base mb-3">Marketplace</h6>
-                            <ul class="widget-list">
-                              <li class="widget-list-item"><a class="widget-list-link" href="marketplace-category.html">Category Page</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="marketplace-single.html">Single Item Page</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="marketplace-vendor.html">Vendor Page</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="marketplace-cart.html">Cart</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="marketplace-checkout.html">Checkout</a></li>
-                            </ul>
-                          </div>
-                          <div class="widget widget-links">
-                            <h6 class="fs-base mb-3">Grocery store</h6>
-                            <ul class="widget-list">
-                              <li class="widget-list-item"><a class="widget-list-link" href="grocery-catalog.html">Product Catalog</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="grocery-single.html">Single Product Page</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="grocery-checkout.html">Checkout</a></li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="mega-dropdown-column pt-1 pt-lg-4 pb-4 px-2 px-lg-3">
-                          <div class="widget widget-links mb-4">
-                            <h6 class="fs-base mb-3">Food Delivery</h6>
-                            <ul class="widget-list">
-                              <li class="widget-list-item"><a class="widget-list-link" href="food-delivery-category.html">Category Page</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="food-delivery-single.html">Single Item (Restaurant)</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="food-delivery-cart.html">Cart (Your Order)</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="food-delivery-checkout.html">Checkout (Address &amp; Payment)</a></li>
-                            </ul>
-                          </div>
-                          <div class="widget widget-links">
-                            <h6 class="fs-base mb-3">NFT Marketplace<span class="badge bg-danger ms-1">NEW</span></h6>
-                            <ul class="widget-list">
-                              <li class="widget-list-item"><a class="widget-list-link" href="nft-catalog-v1.html">Catalog v.1</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="nft-catalog-v2.html">Catalog v.2</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="nft-single-auction-live.html">Single Item - Auction Live</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="nft-single-auction-ended.html">Single Item - Auction Ended</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="nft-single-buy.html">Single Item - Buy Now</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="nft-vendor.html">Vendor Page</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="nft-connect-wallet.html">Connect Wallet</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="nft-create-item.html">Create New Item</a></li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="mega-dropdown-column pt-1 pt-lg-4 px-2 px-lg-3">
-                          <div class="widget widget-links mb-4">
-                            <h6 class="fs-base mb-3">Shop pages</h6>
-                            <ul class="widget-list">
-                              <li class="widget-list-item"><a class="widget-list-link" href="shop-categories.html">Shop Categories</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="shop-single-v1.html">Product Page v.1</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="shop-single-v2.html">Product Page v.2</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="shop-cart.html">Cart</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="checkout-details.html">Checkout - Details</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="checkout-shipping.html">Checkout - Shipping</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="checkout-payment.html">Checkout - Payment</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="checkout-review.html">Checkout - Review</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="checkout-complete.html">Checkout - Complete</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="order-tracking.html">Order Tracking</a></li>
-                              <li class="widget-list-item"><a class="widget-list-link" href="comparison.html">Product Comparison</a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                
                   </li>
                   <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">Account</a>
                     <ul class="dropdown-menu">
@@ -548,62 +469,9 @@
                       <li><a class="dropdown-item" href="account-password-recovery.html">Password Recovery</a></li>
                     </ul>
                   </li>
-                  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">Pages</a>
-                    <ul class="dropdown-menu">
-                      <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Navbar Variants</a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="navbar-1-level-light.html">1 Level Light</a></li>
-                          <li><a class="dropdown-item" href="navbar-1-level-dark.html">1 Level Dark</a></li>
-                          <li><a class="dropdown-item" href="navbar-2-level-light.html">2 Level Light</a></li>
-                          <li><a class="dropdown-item" href="navbar-2-level-dark.html">2 Level Dark</a></li>
-                          <li><a class="dropdown-item" href="navbar-3-level-light.html">3 Level Light</a></li>
-                          <li><a class="dropdown-item" href="navbar-3-level-dark.html">3 Level Dark</a></li>
-                          <li><a class="dropdown-item" href="home-electronics-store.html">Electronics Store</a></li>
-                          <li><a class="dropdown-item" href="home-marketplace.html">Marketplace</a></li>
-                          <li><a class="dropdown-item" href="home-grocery-store.html">Side Menu (Grocery)</a></li>
-                        </ul>
-                      </li>
-                      <li class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="about.html">About Us</a></li>
-                      <li><a class="dropdown-item" href="contacts.html">Contacts</a></li>
-                      <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Help Center</a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="help-topics.html">Help Topics</a></li>
-                          <li><a class="dropdown-item" href="help-single-topic.html">Single Topic</a></li>
-                          <li><a class="dropdown-item" href="help-submit-request.html">Submit a Request</a></li>
-                        </ul>
-                      </li>
-                      <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">404 Not Found</a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="404-simple.html">404 - Simple Text</a></li>
-                          <li><a class="dropdown-item" href="404-illustration.html">404 - Illustration</a></li>
-                        </ul>
-                      </li>
-                      <li class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="sticky-footer.html">Sticky Footer Demo</a></li>
-                    </ul>
-                  </li>
+                  
                   <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">Blog</a>
-                    <ul class="dropdown-menu">
-                      <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Blog List Layouts</a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="blog-list-sidebar.html">List with Sidebar</a></li>
-                          <li><a class="dropdown-item" href="blog-list.html">List no Sidebar</a></li>
-                        </ul>
-                      </li>
-                      <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Blog Grid Layouts</a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="blog-grid-sidebar.html">Grid with Sidebar</a></li>
-                          <li><a class="dropdown-item" href="blog-grid.html">Grid no Sidebar</a></li>
-                        </ul>
-                      </li>
-                      <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Single Post Layouts</a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="blog-single-sidebar.html">Article with Sidebar</a></li>
-                          <li><a class="dropdown-item" href="blog-single.html">Article no Sidebar</a></li>
-                        </ul>
-                      </li>
-                    </ul>
+                    
                   </li>
                   <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Docs / Components</a>
                     <ul class="dropdown-menu">
@@ -638,3 +506,15 @@
           </div>
         </div>
       </header>
+
+         <?php
+            if (isset($_SESSION['alert'])) {
+            ?>
+          <div class="container pt-5">
+    <div class="alert alert-<?= $_SESSION['alert']['type'] ?>">
+        <?= $_SESSION['alert']['message'] ?>
+    </div>
+</div>
+
+<?php unset($_SESSION['alert']); 
+}?>
