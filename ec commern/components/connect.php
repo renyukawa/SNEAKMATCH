@@ -1,6 +1,6 @@
 <?php
 
-$db_host = '192.168.25.125'; // ★他のPCのIPアドレス
+$db_host = '192.168.25.125'; // ★他のPCのIPアドレ
 $db_name = 'kutu';          // ★データベース名が 'kutu' であると仮定
 $user_name = 'nishida';     // ★サーバー側で設定されているユーザー名
 $user_password = 'security'; // ★サーバー側のパスワード（設定されていなければ空 ''）
