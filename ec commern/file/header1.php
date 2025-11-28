@@ -260,10 +260,10 @@ require_once('file/functions.php')
         <div class="navbar-sticky bg-light">
     <div class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-            <a class="navbar-brand d-none d-sm-block flex-shrink-0" href="homepage.php">
+            <a class="navbar-brand d-none d-sm-block flex-shrink-0" href="homepage.html">
                 <img src="img/logo1.png" width="290" alt="Snekatch">
             </a>
-            <a class="navbar-brand d-sm-none flex-shrink-0 me-2" href="homepage.php">
+            <a class="navbar-brand d-sm-none flex-shrink-0 me-2" href="homepage.html">
                 <img src="img/logo1.png" width="174" alt="Snekatch">
             </a>
             <div class="input-group d-none d-lg-flex mx-4">

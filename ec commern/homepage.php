@@ -1,5 +1,5 @@
 <?php
-require_once('file/header1.php')
+require_once 'file/header1.php';
 ?>
 
 <!DOCTYPE html>
