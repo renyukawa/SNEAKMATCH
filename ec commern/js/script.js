@@ -38,3 +38,32 @@ window.addEventListener("scroll", function () {
     goTopBtn.classList.remove("active");
   }
 });
+
+
+
+
+
+
+
+// next step slideee
+
+
+
+
+const slides = document.querySelectorAll('.hero-bg');
+let currentSlide = 0;
+
+function changeSlide() {
+  // 1. Remove the 'active' class from the current slide
+  slides[currentSlide].classList.remove('active');
+
+  // 2. Calculate the next slide index
+  // (The % symbol loops it back to 0 when it reaches the end)
+  currentSlide = (currentSlide + 1) % slides.length;
+
+  // 3. Add the 'active' class to the new slide
+  slides[currentSlide].classList.add('active');
+}
+
+// Run the changeSlide function every 3000 milliseconds (3 seconds)
+setInterval(changeSlide, 3000);
