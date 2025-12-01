@@ -1,4 +1,4 @@
-<?php
+function<?php
 require_once('file/header1.php')
 ?>
       <!-- Page Title-->
