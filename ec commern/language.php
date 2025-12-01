@@ -6,12 +6,13 @@ $language_code = 'en'; // ユーザーが 'en' を選択した場合
 $product_id = 101;
 
 // 2. データベース接続情報 (適宜変更してください)
-$db_name = 'mysql:host=localhost;dbname=kutu';
+$localhost = '192.168.25.125';
 $user_name = 'nishida';
 $user_password = 'security';
+$db_name = 'kutu';
 
 // 3. データベースに接続
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($localhost, $user_name, $user_password, $db_name);
 
 if ($conn -> connect_error) {
     die("Connection failed: " . $conn -> connect_error);
