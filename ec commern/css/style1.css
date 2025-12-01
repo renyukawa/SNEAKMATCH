@@ -145,3 +145,19 @@ button:hover{
 
 
 
+.product-grid-container {
+    /* 1. Use CSS Grid to organize the children */
+    display: grid; 
+    
+    /* 2. Create 4 equal-width columns */
+    /* repeat(4, 1fr) means 4 columns, each taking up an equal fraction of the available space */
+    grid-template-columns: repeat(4, 1fr); 
+    
+    /* 3. Add space between the rows and columns */
+    gap: 15px; /* Adjust this value for the spacing you want */
+    
+    /* 4. Match the dark background from the image */
+    background-color: #1a1a1a; 
+    padding: 20px;
+    font-family: sans-serif;
+}
