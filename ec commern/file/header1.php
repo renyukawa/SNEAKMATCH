@@ -260,10 +260,10 @@ require_once('file/functions.php')
         <div class="navbar-sticky bg-light">
     <div class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-            <a class="navbar-brand d-none d-sm-block flex-shrink-0" href="home.html">
+            <a class="navbar-brand d-none d-sm-block flex-shrink-0" href="homepage.php">
                 <img src="img/logo1.png" width="290" alt="Snekatch">
             </a>
-            <a class="navbar-brand d-sm-none flex-shrink-0 me-2" href="home.html">
+            <a class="navbar-brand d-sm-none flex-shrink-0 me-2" href="homepage.php">
                 <img src="img/logo1.png" width="174" alt="Snekatch">
             </a>
             <div class="input-group d-none d-lg-flex mx-4">
@@ -425,7 +425,7 @@ require_once('file/functions.php')
                 </ul>
                 <!-- Primary menu-->
                 <ul class="navbar-nav">
-                  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home</a>
+                  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="shop-grid-ft.php" data-bs-toggle="dropdown">Home</a>
                    
                   </li>
                   <li class="nav-item dropdown active"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Shop</a>
