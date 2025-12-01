@@ -1,10 +1,12 @@
 <?php
 
-$db_name = 'mysql:host=192.168.25.125t;dbname=kutu';
+$localhost = '192.168.25.125';
 $user_name = 'nishida';
 $user_password = 'security';
+$db_name = 'kutu';
 
-$conn = new PDO($db_name, $user_name, $user_password);
+$conn = new PDO("mysql:host=$localhost;dbname=$db_name", $user_name, $user_password);
+// 上のコードみんなが使えるようにした。
 
 if ($conn) {
     echo "";
