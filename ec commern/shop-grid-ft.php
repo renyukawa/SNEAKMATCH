@@ -1217,7 +1217,15 @@ require_once('file/header1.php')
                         <option value="jpy">¥ JPY</option>
                       </select>
                     </li>
-                     <?php /* LOCAL_TEST_MARKER: shop-grid-ft.php - 2025-12-02 */ ?>
+                      <div class="language-dropdown">
+                          <button class="dropbtn">
+                              🇯🇵 日本語 <span class="arrow">▼</span> 
+                          </button>
+                          <div class="dropdown-content">
+                              <a href="/en/massages.php">English</a>
+                              <a href="/ja/massages.php">日本語</a>
+                              <a href="/zh/massages.php">中文</a>
+                          </div>
                       </div>
                   </ul>
                 </div>
@@ -1254,6 +1262,47 @@ require_once('file/header1.php')
     <script src="vendor/drift-zoom/dist/Drift.min.js"></script>
     <!-- Main theme script-->
     <script src="js/theme.min.js"></script>
+    <!-- Language dropdown style & script (added) -->
+    <style>
+    /* Language dropdown: minimal, self-contained styles */
+    .language-dropdown{position:relative;display:inline-block}
+    .language-dropdown .dropbtn{background:transparent;border:0;color:#fff;font-size:0.95rem;cursor:pointer;padding:6px 10px;display:flex;align-items:center;gap:6px}
+    .language-dropdown .dropbtn .arrow{display:inline-block;transition:transform .18s ease}
+    .language-dropdown .dropdown-content{display:none;position:absolute;right:0;bottom:calc(100% + 6px);background:#fff;color:#222;min-width:150px;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,.18);overflow:hidden;z-index:1050}
+    .language-dropdown .dropdown-content a{display:block;padding:8px 12px;color:#222;text-decoration:none;font-size:0.94rem}
+    .language-dropdown .dropdown-content a:hover{background:#f2f2f2}
+    .language-dropdown .dropdown-content.show{display:block}
+    .language-dropdown.open .dropbtn .arrow{transform:rotate(180deg)}
+    /* Adjust colors when footer is dark */
+    footer .language-dropdown .dropbtn{color:#fff}
+    footer .language-dropdown .dropdown-content{right:0}
+    </style>
+
+    <script>
+    (function(){
+      function closeAllLanguageDropdowns(){
+        document.querySelectorAll('.language-dropdown').forEach(function(el){
+          el.classList.remove('open');
+          var d = el.querySelector('.dropdown-content'); if(d) d.classList.remove('show');
+        });
+      }
+      document.addEventListener('click', function(e){
+        var btn = e.target.closest && e.target.closest('.language-dropdown');
+        if(!btn){
+          closeAllLanguageDropdowns();
+          return;
+        }
+        // toggle only the clicked one
+        var dropdown = btn.querySelector('.dropdown-content');
+        if(!dropdown) return;
+        var isOpen = dropdown.classList.contains('show');
+        closeAllLanguageDropdowns();
+        if(!isOpen){ btn.classList.add('open'); dropdown.classList.add('show'); }
+      }, false);
+      // close on ESC
+      document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeAllLanguageDropdowns(); });
+    })();
+    </script>
   </body>
 
 <!-- Mirrored from cartzilla.createx.studio/shop-grid-ls.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Oct 2023 15:49:57 GMT -->
