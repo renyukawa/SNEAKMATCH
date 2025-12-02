@@ -1217,15 +1217,7 @@ require_once('file/header1.php')
                         <option value="jpy">¥ JPY</option>
                       </select>
                     </li>
-                      <div class="language-dropdown">
-                          <button class="dropbtn">
-                              🇯🇵 日本語 <span class="arrow">▼</span> 
-                          </button>
-                          <div class="dropdown-content">
-                              <a href="/en/massages.php">English</a>
-                              <a href="/ja/massages.php">日本語</a>
-                              <a href="/zh/massages.php">中文</a>
-                          </div>
+                     <?php /* LOCAL_TEST_MARKER: shop-grid-ft.php - 2025-12-02 */ ?>
                       </div>
                   </ul>
                 </div>
