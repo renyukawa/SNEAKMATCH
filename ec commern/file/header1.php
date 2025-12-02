@@ -264,13 +264,20 @@ if (file_exists($__lang_file)) {
                     <div class="currency-dropdown" style="width:100%">
                       <button type="button" class="dropbtn d-flex align-items-center w-100 px-2 py-1">
                         <img class="me-2" src="img/flags/en.png" width="20" alt=""> <span class="currency-label">$ USD</span>
-      
-                      </li>
+                        </button>
+                        <div class="dropdown-content">
+                          <a href="#" data-currency="USD"><span>$</span> USD</a>
+                          <a href="#" data-currency="EUR"><span>€</span> EUR</a>
+                          <a href="#" data-currency="GBP"><span>£</span> GBP</a>
+                        </div>
+                      </div>
+                    </li>
                       <li class="dropdown-item p-0">
                         <div class="language-dropdown" style="width:100%">
                           <button type="button" class="lang-btn d-flex align-items-center w-100 px-2 py-1">
-                            <img class="me-2" src="img/flags/en.png" width="20" alt="英語">
-                            <span class="lang-label"><?php echo (isset($__site_lang) && $__site_lang==='ja') ? '日本語' : ((isset($__site_lang) && $__site_lang==='zh') ? '中文' : '英語'); ?></span>
+                            <?php $flag = 'en.png'; $alt = '英語'; if (isset($__site_lang) && $__site_lang==='ja') { $flag = 'jp.png'; $alt = '日本語'; } elseif (isset($__site_lang) && $__site_lang==='zh') { $flag = 'cn.png'; $alt = '中文'; } ?>
+                            <img class="me-2" src="img/flags/<?php echo $flag; ?>" width="20" alt="<?php echo $alt; ?>">
+                            <span class="lang-label"><?php echo $alt; ?></span>
                             <span class="ms-auto lang-arrow">▼</span>
                           </button>
                           <div class="lang-content">

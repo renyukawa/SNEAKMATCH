@@ -7,6 +7,7 @@ return [
     
     // ページタイトル
     'page_title' => 'ショップグリッド左サイドバー',
+    'page_title_shop' => 'ショップグリッド左サイドバー',
     
     // フィルター
     'filter_title' => 'フィルター',
@@ -28,13 +29,16 @@ return [
     
     // 靴のサブカテゴリー
     'shoes_pumps_heels' => 'パンプス＆ハイヒール',
+    'shoes_pumps' => 'パンプス＆ハイヒール',
     'shoes_ballerinas_flats' => 'バレリーナ＆フラット',
+    'shoes_ballerinas' => 'バレリーナ＆フラット',
     'shoes_sandals' => 'サンダル',
     'shoes_sneakers' => 'スニーカー',
     'shoes_boots' => 'ブーツ',
     'shoes_ankle_boots' => 'アンクルブーツ',
     'shoes_loafers' => 'ローファー',
     'shoes_slip_on' => 'スリップオン',
+        'shoes_view_all' => 'すべて表示',
     'shoes_flip_flops' => 'ビーチサンダル',
     'shoes_clogs_mules' => 'クロッグス＆ミュール',
     'shoes_athletic' => 'アスレティックシューズ',

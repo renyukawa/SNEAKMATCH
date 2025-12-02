@@ -7,6 +7,7 @@ return [
     
     // Page title
     'page_title' => 'Shop grid left sidebar',
+    'page_title_shop' => 'Shop grid left sidebar',
     
     // Filters
     'filter_title' => 'Filters',
@@ -28,8 +29,11 @@ return [
     
     // Shoes subcategories
     'shoes_pumps_heels' => 'Pumps & High Heels',
+    'shoes_pumps' => 'Pumps & High Heels',
     'shoes_ballerinas_flats' => 'Ballerinas & Flats',
+    'shoes_ballerinas' => 'Ballerinas & Flats',
     'shoes_sandals' => 'Sandals',
+        'shoes_view_all' => 'View all',
     'shoes_sneakers' => 'Sneakers',
     'shoes_boots' => 'Boots',
     'shoes_ankle_boots' => 'Ankle Boots',

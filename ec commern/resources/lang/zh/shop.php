@@ -7,6 +7,7 @@ return [
     
     // 页面标题
     'page_title' => '商店网格左侧栏',
+    'page_title_shop' => '商店网格左侧栏',
     
     // 筛选器
     'filter_title' => '筛选器',
@@ -28,13 +29,16 @@ return [
     
     // 鞋类子类别
     'shoes_pumps_heels' => '高跟鞋',
+    'shoes_pumps' => '高跟鞋',
     'shoes_ballerinas_flats' => '芭蕾舞鞋和平底鞋',
+    'shoes_ballerinas' => '芭蕾舞鞋和平底鞋',
     'shoes_sandals' => '凉鞋',
     'shoes_sneakers' => '运动鞋',
     'shoes_boots' => '靴子',
     'shoes_ankle_boots' => '踝靴',
     'shoes_loafers' => '乐福鞋',
     'shoes_slip_on' => '一脚蹬',
+    'shoes_view_all' => '查看全部',
     'shoes_flip_flops' => '人字拖',
     'shoes_clogs_mules' => '木屐和骡鞋',
     'shoes_athletic' => '运动鞋',
