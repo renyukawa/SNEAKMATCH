@@ -534,7 +534,7 @@ require_once('file/header1.php')
               <!-- Product-->
               <div class="col-md-4 col-sm-6 px-2 mb-4">
                 <div class="card product-card">
-                  <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="ci-heart"></i></button><a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img src="RUNOVA_sneaker/RN1.jpg" alt="Product"></a>
+                  <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="ci-heart"></i></button><a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img src="RUNOVA_sneaker/RN2.jpg" alt="Product"></a>
                   <div class="card-body py-2"><a class="product-meta d-block fs-xs pb-1" href="#">Sneakers &amp; Keds</a>
                     <h3 class="product-title fs-sm"><a href="shop-single-v1.html">Sneakers</a></h3>
                     <div class="d-flex justify-content-between">
