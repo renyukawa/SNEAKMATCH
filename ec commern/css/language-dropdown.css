@@ -1,0 +1,70 @@
+/* Language Dropdown Styles */
+
+.language-dropdown {
+  position: relative;
+  display: block;
+}
+
+.language-dropdown .lang-btn {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.language-dropdown .lang-btn img {
+  vertical-align: middle;
+}
+
+.language-dropdown .lang-arrow {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  transition: transform 0.18s ease;
+}
+
+.language-dropdown .lang-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 6px);
+  background: #fff;
+  color: #222;
+  min-width: 160px;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  z-index: 1050;
+}
+
+.language-dropdown .lang-content a {
+  display: block;
+  padding: 8px 12px;
+  color: #222;
+  text-decoration: none;
+}
+
+.language-dropdown .lang-content a img {
+  vertical-align: middle;
+}
+
+.language-dropdown .lang-content a:hover {
+  background: #f7f7f8;
+}
+
+.language-dropdown.open .lang-content {
+  display: block;
+}
+
+.language-dropdown.open .lang-arrow {
+  transform: rotate(180deg);
+}
+
+/* Mobile Responsive */
+@media (max-width: 575px) {
+  .language-dropdown .lang-content {
+    right: 0;
+    left: auto;
+    min-width: 140px;
+  }
+}

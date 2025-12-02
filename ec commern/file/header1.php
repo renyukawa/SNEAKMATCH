@@ -46,6 +46,9 @@ if (file_exists($__lang_file)) {
     <link rel="stylesheet" media="screen" href="vendor/drift-zoom/dist/drift-basic.min.css"/>
     <!-- Main Theme Styles + Bootstrap-->
     <link rel="stylesheet" media="screen" href="css/theme.min.css">
+      <!-- Language Dropdown Styles -->
+      <link rel="stylesheet" media="screen" href="css/language-dropdown.css">
+      <!-- Google Tag Manager-->
     <!-- Google Tag Manager-->
     <script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -266,67 +269,19 @@ if (file_exists($__lang_file)) {
                       <li class="dropdown-item p-0">
                         <div class="language-dropdown" style="width:100%">
                           <button type="button" class="lang-btn d-flex align-items-center w-100 px-2 py-1">
-                            <img class="me-2" src="img/flags/en.png" width="20" alt="英語"> <span class="lang-label">英語</span>
-                            
+                            <img class="me-2" src="img/flags/en.png" width="20" alt="英語">
+                            <span class="lang-label"><?php echo (isset($__site_lang) && $__site_lang==='ja') ? '日本語' : ((isset($__site_lang) && $__site_lang==='zh') ? '中文' : '英語'); ?></span>
                             <span class="ms-auto lang-arrow">▼</span>
                           </button>
                           <div class="lang-content">
                             <a href="#" data-lang="en"><img class="me-2" src="img/flags/en.png" width="20" alt="英語">英語</a>
-                            <a href="#" data-lang="ja"><img class="me-2" src="img/flags/jp.svg" width="20" alt="日本語">日本語</a>
-                            <a href="#" data-lang="zh"><img class="me-2" src="img/flags/cn.svg" width="20" alt="中文">中文</a>
+                            <a href="#" data-lang="ja"><img class="me-2" src="img/flags/jp.png" width="20" alt="日本語">日本語</a>
+                            <a href="#" data-lang="zh"><img class="me-2" src="img/flags/cn.png" width="20" alt="中文">中文</a>
                           </div>
                         </div>
                       </li>
                       <!-- Inline style/script for the language dropdown (self-contained) -->
-                      <style>
-                      .language-dropdown{position:relative;display:block}
-                      .language-dropdown .lang-btn{background:transparent;border:0;color:inherit;text-align:left;cursor:pointer}
-                      .language-dropdown .lang-btn img{vertical-align:middle}
-                      .language-dropdown .lang-arrow{font-size:0.85rem;opacity:.9;transition:transform .18s ease}
-                      .language-dropdown .lang-content{display:none;position:absolute;left:0;top:calc(100% + 6px);background:#fff;color:#222;min-width:160px;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,.18);overflow:hidden;z-index:1050}
-                      .language-dropdown .lang-content a{display:block;padding:8px 12px;color:#222;text-decoration:none}
-                      .language-dropdown .lang-content a img{vertical-align:middle}
-                      .language-dropdown .lang-content a:hover{background:#f7f7f8}
-                      .language-dropdown.open .lang-content{display:block}
-                      .language-dropdown.open .lang-arrow{transform:rotate(180deg)}
-                      @media (max-width:575px){.language-dropdown .lang-content{right:0;left:auto;min-width:140px}}
-                      </style>
-
-                      <script>
-                      (function(){
-                        function closeLang(){ document.querySelectorAll('.language-dropdown').forEach(function(el){ el.classList.remove('open'); }); }
-                        document.addEventListener('click', function(e){
-                          var el = e.target.closest && e.target.closest('.language-dropdown');
-                          if(!el){ closeLang(); return; }
-                          var wasOpen = el.classList.contains('open');
-                          closeLang();
-                          if(!wasOpen) el.classList.add('open');
-                        }, false);
-                        document.addEventListener('click', function(e){
-                          var a = e.target.closest && e.target.closest('.language-dropdown .lang-content a');
-                          if(!a) return;
-                          e.preventDefault();
-                          var lang = a.getAttribute('data-lang') || 'en';
-                          try{ document.cookie = 'site_lang=' + encodeURIComponent(lang) + ';path=/;max-age=' + (60*60*24*365); }catch(err){}
-                          // update visible label if present
-                          var wrap = a.closest('.language-dropdown');
-                          if(wrap){ wrap.querySelector('.lang-label').textContent = a.textContent.trim(); }
-                          // reload to let server-side pick up cookie
-                          setTimeout(function(){ location.reload(); }, 180);
-                        }, false);
-                        document.addEventListener('DOMContentLoaded', function(){
-                          try{
-                            var parts = document.cookie.split(';').map(function(s){return s.trim();});
-                            var cookie = parts.find(function(p){ return p.indexOf('site_lang=')===0; });
-                            if(cookie){ var cur = decodeURIComponent(cookie.split('=')[1]||'en');
-                              var a = document.querySelector('.language-dropdown .lang-content a[data-lang="'+cur+'"]');
-                              if(a){ var lbl = document.querySelector('.language-dropdown .lang-label'); if(lbl) lbl.textContent = a.textContent.trim(); }
-                            }
-                          }catch(e){}
-                        });
-                        document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeLang(); });
-                      })();
-                      </script>
+                        <!-- Inline style/script for the language dropdown has been removed -->
                 </ul>
                 <!-- Inline style/script for the currency dropdown (self-contained) -->
                 <style>
@@ -377,6 +332,8 @@ if (file_exists($__lang_file)) {
                   document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeCurrency(); });
                 })();
                 </script>
+                <!-- Language Dropdown Module -->
+                <script src="js/language-dropdown.js"></script>
               </div>
             </div>
           </div>

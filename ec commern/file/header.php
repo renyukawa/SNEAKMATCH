@@ -1,5 +1,21 @@
 
-  <!DOCTYPE html>
+<?php
+require_once('file/functions.php');
+// Language selection: read cookie and include language resource if available
+$__available_langs = ['en','ja','zh'];
+$__site_lang = 'en';
+if (!empty($_COOKIE['site_lang']) && in_array($_COOKIE['site_lang'], $__available_langs)) {
+  $__site_lang = $_COOKIE['site_lang'];
+}
+define('SITE_LANG', $__site_lang);
+// Load language strings into global array for t() function
+$__lang_strings = [];
+$__lang_file = __DIR__ . '/../../resources/lang/' . $__site_lang . '/shop.php';
+if (file_exists($__lang_file)) {
+  $__lang_strings = include_once($__lang_file);
+}
+?>
+<!DOCTYPE html>
 <html lang="en">
   
 <!-- Mirrored from cartzilla.createx.studio/home-fashion-store-v1.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Oct 2023 15:48:22 GMT -->
@@ -27,6 +43,8 @@
     <link rel="stylesheet" media="screen" href="vendor/drift-zoom/dist/drift-basic.min.css"/>
     <!-- Main Theme Styles + Bootstrap-->
     <link rel="stylesheet" media="screen" href="css/theme.min.css">
+    <!-- Language Dropdown Styles -->
+    <link rel="stylesheet" media="screen" href="css/language-dropdown.css">
     <!-- Google Tag Manager-->
     <script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -251,9 +269,19 @@
                         </div>
                       </div>
                     </li>
-                    <li><a class="dropdown-item pb-1" href="#"><img class="me-2" src="img/flags/fr.png" width="20" alt="Français">Français</a></li>
-                    <li><a class="dropdown-item pb-1" href="#"><img class="me-2" src="img/flags/de.png" width="20" alt="Deutsch">Deutsch</a></li>
-                    <li><a class="dropdown-item" href="#"><img class="me-2" src="img/flags/it.png" width="20" alt="Italiano">Italiano</a></li>
+                    <li class="dropdown-item p-0">
+                      <div class="language-dropdown" style="width:100%">
+                        <button type="button" class="lang-btn d-flex align-items-center w-100 px-2 py-1">
+                          <img class="me-2" src="img/flags/en.png" width="20" alt="英語"> <span class="lang-label"><?php echo isset($__site_lang) && $__site_lang==='ja' ? '日本語' : (isset($__site_lang) && $__site_lang==='zh' ? '中文' : '英語'); ?></span>
+                          <span class="ms-auto lang-arrow">▼</span>
+                        </button>
+                        <div class="lang-content">
+                          <a href="#" data-lang="en"><img class="me-2" src="img/flags/en.png" width="20" alt="英語">英語</a>
+                          <a href="#" data-lang="ja"><img class="me-2" src="img/flags/jp.png" width="20" alt="日本語">日本語</a>
+                          <a href="#" data-lang="zh"><img class="me-2" src="img/flags/cn.png" width="20" alt="中文">中文</a>
+                        </div>
+                      </div>
+                    </li>
                   </ul>
                   <!-- Inline style/script for the currency dropdown (self-contained) -->
                   <style>
@@ -309,6 +337,8 @@
                     document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeCurrency(); });
                   })();
                   </script>
+                  <!-- Language Dropdown Module -->
+                  <script src="js/language-dropdown.js"></script>
               </div>
             </div>
           </div>
