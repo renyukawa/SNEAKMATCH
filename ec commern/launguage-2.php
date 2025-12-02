@@ -28,9 +28,9 @@ $sql = "
 ";
 
 // プリペアドステートメントでクエリを実行
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("is", $product_id, $language_code); // i: integer (int), s: string (language_code)
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $product = $result->fetch_assoc();
+    $stmt = $conn -> prepare($sql);
+    $stmt -> bind_param("is", $product_id, $language_code); // i: integer (int), s: string (language_code)
+    $stmt -> execute();
+    $result = $stmt -> get_result();
+    $product = $result -> fetch_assoc();
 ?>

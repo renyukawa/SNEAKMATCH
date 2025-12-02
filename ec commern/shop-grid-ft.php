@@ -1222,9 +1222,9 @@ require_once('file/header1.php')
                               🇯🇵 日本語 <span class="arrow">▼</span> 
                           </button>
                           <div class="dropdown-content">
-                              <a href="/en/...">English</a>
-                              <a href="/ja/...">日本語</a>
-                              <a href="/zh/...">中文</a>
+                              <a href="/en/massages.php">English</a>
+                              <a href="/ja/massages.php">日本語</a>
+                              <a href="/zh/massages.php">中文</a>
                           </div>
                       </div>
                   </ul>
