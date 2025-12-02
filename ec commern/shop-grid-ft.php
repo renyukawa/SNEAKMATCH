@@ -1,4 +1,4 @@
-<?php
+function<?php
 require_once('file/header1.php')
 ?>
       <!-- Page Title-->
@@ -1111,9 +1111,16 @@ require_once('file/header1.php')
                         <option value="jpy">¥ JPY</option>
                       </select>
                     </li>
-                    <li><a class="dropdown-item pb-1" href="#"><img class="me-2" src="img/flags/fr.png" width="20" alt="Français">Français</a></li>
-                    <li><a class="dropdown-item pb-1" href="#"><img class="me-2" src="img/flags/de.png" width="20" alt="Deutsch">Deutsch</a></li>
-                    <li><a class="dropdown-item" href="#"><img class="me-2" src="img/flags/it.png" width="20" alt="Italiano">Italiano</a></li>
+                      <div class="language-dropdown">
+                          <button class="dropbtn">
+                              🇯🇵 日本語 <span class="arrow">▼</span> 
+                          </button>
+                          <div class="dropdown-content">
+                              <a href="/en/...">English</a>
+                              <a href="/ja/...">日本語</a>
+                              <a href="/zh/...">中文</a>
+                          </div>
+                      </div>
                   </ul>
                 </div>
               </div>
