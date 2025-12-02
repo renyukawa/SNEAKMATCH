@@ -240,18 +240,73 @@ require_once('file/functions.php')
             <div class="ms-3 text-nowrap"><a class="topbar-link me-4 d-none d-md-inline-block" href="order-tracking.html"><i class="ci-location"></i>Order tracking</a>
               <div class="topbar-text dropdown disable-autohide"><a class="topbar-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><img class="me-2" src="img/flags/en.png" width="20" alt="English">Eng / $</a>
                 <ul class="dropdown-menu dropdown-menu-end">
-                  <li class="dropdown-item">
-                    <select class="form-select form-select-sm">
-                      <option value="usd">$ USD</option>
-                      <option value="eur">€ EUR</option>
-                      <option value="ukp">£ UKP</option>
-                      <option value="jpy">¥ JPY</option>
-                    </select>
+                  <li class="dropdown-item p-0">
+                    <div class="currency-dropdown" style="width:100%">
+                      <button type="button" class="dropbtn d-flex align-items-center w-100 px-2 py-1">
+                        <img class="me-2" src="img/flags/en.png" width="20" alt=""> <span class="currency-label">$ USD</span>
+                        <span class="ms-auto arrow">▼</span>
+                      </button>
+                      <div class="dropdown-content">
+                        <a href="#" data-currency="usd">$ USD</a>
+                        <a href="#" data-currency="eur">€ EUR</a>
+                        <a href="#" data-currency="ukp">£ UKP</a>
+                        <a href="#" data-currency="jpy">¥ JPY</a>
+                      </div>
+                    </div>
                   </li>
                   <li><a class="dropdown-item pb-1" href="#"><img class="me-2" src="img/flags/fr.png" width="20" alt="Français">Français</a></li>
                   <li><a class="dropdown-item pb-1" href="#"><img class="me-2" src="img/flags/de.png" width="20" alt="Deutsch">Deutsch</a></li>
                   <li><a class="dropdown-item" href="#"><img class="me-2" src="img/flags/it.png" width="20" alt="Italiano">Italiano</a></li>
                 </ul>
+                <!-- Inline style/script for the currency dropdown (self-contained) -->
+                <style>
+                .currency-dropdown{position:relative;display:block}
+                .currency-dropdown .dropbtn{background:transparent;border:0;color:inherit;text-align:left;cursor:pointer}
+                .currency-dropdown .dropbtn img{vertical-align:middle}
+                .currency-dropdown .arrow{font-size:0.85rem;opacity:.9;transition:transform .18s ease}
+                .currency-dropdown .dropdown-content{display:none;position:absolute;left:0;top:calc(100% + 6px);background:#fff;color:#222;min-width:160px;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,.18);overflow:hidden;z-index:1050}
+                .currency-dropdown .dropdown-content a{display:block;padding:8px 12px;color:#222;text-decoration:none}
+                .currency-dropdown .dropdown-content a:hover{background:#f2f2f2}
+                .currency-dropdown.open .dropdown-content{display:block}
+                .currency-dropdown.open .arrow{transform:rotate(180deg)}
+                @media (max-width:575px){.currency-dropdown .dropdown-content{right:0;left:auto;min-width:140px}}
+                </style>
+
+                <script>
+                (function(){
+                  function closeCurrency(){
+                    document.querySelectorAll('.currency-dropdown').forEach(function(el){ el.classList.remove('open'); });
+                  }
+                  document.addEventListener('click', function(e){
+                    var el = e.target.closest && e.target.closest('.currency-dropdown');
+                    if(!el){ closeCurrency(); return; }
+                    var wasOpen = el.classList.contains('open');
+                    closeCurrency();
+                    if(!wasOpen) el.classList.add('open');
+                  }, false);
+                  document.addEventListener('click', function(e){
+                    var a = e.target.closest && e.target.closest('.currency-dropdown .dropdown-content a');
+                    if(!a) return;
+                    e.preventDefault();
+                    var cur = a.getAttribute('data-currency') || '';
+                    var label = a.textContent || a.innerText;
+                    var wrap = a.closest('.currency-dropdown');
+                    if(wrap){ wrap.querySelector('.currency-label').textContent = label.trim(); }
+                    try{ localStorage.setItem('site_currency', cur); }catch(err){}
+                    closeCurrency();
+                  }, false);
+                  document.addEventListener('DOMContentLoaded', function(){
+                    try{
+                      var cur = localStorage.getItem('site_currency');
+                      if(cur){
+                        var a = document.querySelector('.currency-dropdown .dropdown-content a[data-currency="'+cur+'"]');
+                        if(a){ document.querySelector('.currency-dropdown .currency-label').textContent = a.textContent.trim(); }
+                      }
+                    }catch(e){}
+                  });
+                  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeCurrency(); });
+                })();
+                </script>
               </div>
             </div>
           </div>
