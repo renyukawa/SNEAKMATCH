@@ -1218,14 +1218,11 @@
                       </select>
                     </li>
                       <div class="language-dropdown">
-                          <button class="dropbtn">
-                              🇯🇵 日本語 <span class="arrow">▼</span> 
-                          </button>
-                          <div class="dropdown-content">
-                              <a href="/en/massages.php">English</a>
-                              <a href="/ja/massages.php">日本語</a>
-                              <a href="/zh/massages.php">中文</a>
-                          </div>
+                        
+                        <a class="dropdown-item py-2" href="#"><img class="me-2" src="img/flags/de.png" width="20" alt="Deutsch">Deutsch</a>
+                        <a class="dropdown-item py-2" href="#"><img class="me-2" src="img/flags/fr.png" width="20" alt="Français">Français</a>
+                        <a class="dropdown-item py-2" href="#"><img class="me-2" src="img/flags/it.png" width="20" alt="Italiano">Italiano</a>
+                        <a class="dropdown-item py-2" href="#"><img class="me-2" src="img/flags/es.png" width="20" alt="Español">Español</a>  
                       </div>
                   </ul>
                 </div>

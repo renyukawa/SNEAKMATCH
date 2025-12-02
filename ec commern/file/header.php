@@ -37,6 +37,7 @@
     </script>
   </head><!-- Body-->
   <body class="handheld-toolbar-enabled">
+    <!-- LOCAL_MARKER: header.php updated: 2025-12-02 -->
     <!-- Google Tag Manager (noscript)-->
     <noscript>
       <iframe src="http://www.googletagmanager.com/ns.html?id=GTM-WKV3GT5" height="0" width="0" style="display: none; visibility: hidden;"></iframe>
