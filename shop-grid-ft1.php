@@ -1037,7 +1037,7 @@ require_once('file/header1.php')
                 <li class="page-item d-none d-sm-block"><a class="page-link" href="#">5</a></li>
               </ul>
               <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="shop-grid-ft1.php" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
+                <li class="page-item"><a class="page-link" href="#" aria-label="Next">Next<i class="ci-arrow-right ms-2"></i></a></li>
               </ul>
             </nav>
           </section>
