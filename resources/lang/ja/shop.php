@@ -269,5 +269,19 @@ return [
     'toolbar_filters'       => 'フィルター',
     'toolbar_wishlist'      => 'ウィッシュリスト',
     'toolbar_menu'          => 'メニュー',
-    'toolbar_total'         => '$265.00',
+    'toolbar_total'         => '¥265.00',
+    
+    // Sorting & Actions
+    'label_sort_by'         => 'ソート:',
+    'sort_popularity'       => '人気度',
+    'sort_low_high_price'   => '安い順',
+    'sort_high_low_price'   => '高い順',
+    'sort_avg_rating'       => '評価平均',
+    'sort_a_z'              => 'A - Z 順',
+    'sort_z_a'              => 'Z - A 順',
+    'label_of_products'     => '287 個の商品',
+    'btn_add_to_cart'       => 'カートに追加',
+    'btn_quick_view'        => 'クイックビュー',
+    'btn_wishlist'          => 'ウィッシュリスト',
+    'btn_view_details'      => '詳細を表示',
 ];

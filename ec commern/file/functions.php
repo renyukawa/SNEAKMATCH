@@ -70,3 +70,17 @@ function text_input($data)
      '<label class="form-label text-capitalize" for="' . $name . '">' .$label. '</label>
      <input name="'.$name.'"class="form-control" type="text" id="' . $name . '" placeholder="' . $name . '">';
 }
+
+// Multi-language support function
+// Returns translated string based on current site language
+function t($key, $default = '') {
+    global $__lang_strings;
+    
+    // Check if language strings are loaded
+    if (!isset($__lang_strings) || !is_array($__lang_strings)) {
+        return $default ?: $key;
+    }
+    
+    // Return translated string or default
+    return isset($__lang_strings[$key]) ? $__lang_strings[$key] : ($default ?: $key);
+}

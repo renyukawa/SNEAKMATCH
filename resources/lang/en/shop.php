@@ -270,4 +270,18 @@ return [
     'toolbar_wishlist'      => 'Wishlist',
     'toolbar_menu'          => 'Menu',
     'toolbar_total'         => '$265.00',
+    
+    // Sorting & Actions
+    'label_sort_by'         => 'Sort by:',
+    'sort_popularity'       => 'Popularity',
+    'sort_low_high_price'   => 'Low - Hight Price',
+    'sort_high_low_price'   => 'High - Low Price',
+    'sort_avg_rating'       => 'Average Rating',
+    'sort_a_z'              => 'A - Z Order',
+    'sort_z_a'              => 'Z - A Order',
+    'label_of_products'     => 'of 287 products',
+    'btn_add_to_cart'       => 'Add to Cart',
+    'btn_quick_view'        => 'Quick view',
+    'btn_wishlist'          => 'Wishlist',
+    'btn_view_details'      => 'View Details',
 ];

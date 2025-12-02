@@ -267,7 +267,21 @@ return [
     
     // Mobile Toolbar
     'toolbar_filters'       => '筛选',
-    'toolbar_wishlist'      => '收藏',
+    'toolbar_wishlist'      => '心愿单',
     'toolbar_menu'          => '菜单',
-    'toolbar_total'         => '$265.00',
+    'toolbar_total'         => '¥265.00',
+    
+    // Sorting & Actions
+    'label_sort_by'         => '排序:',
+    'sort_popularity'       => '热度',
+    'sort_low_high_price'   => '低价优先',
+    'sort_high_low_price'   => '高价优先',
+    'sort_avg_rating'       => '平均评分',
+    'sort_a_z'              => 'A - Z 排序',
+    'sort_z_a'              => 'Z - A 排序',
+    'label_of_products'     => '共 287 件商品',
+    'btn_add_to_cart'       => '加入购物车',
+    'btn_quick_view'        => '快速查看',
+    'btn_wishlist'          => '心愿单',
+    'btn_view_details'      => '查看详情',
 ];

@@ -9,9 +9,12 @@ if (!empty($_COOKIE['site_lang']) && in_array($_COOKIE['site_lang'], $__availabl
   $__site_lang = $_COOKIE['site_lang'];
 }
 define('SITE_LANG', $__site_lang);
-$__lang_file = __DIR__ . '/../../resources/lang/' . $__site_lang . '.php';
+
+// Load language strings into global array for t() function
+$__lang_strings = [];
+$__lang_file = __DIR__ . '/../../resources/lang/' . $__site_lang . '/shop.php';
 if (file_exists($__lang_file)) {
-  include_once($__lang_file);
+  $__lang_strings = include_once($__lang_file);
 }
 ?>
 <!DOCTYPE html>
