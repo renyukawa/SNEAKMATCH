@@ -1026,7 +1026,7 @@ require_once('file/header1.php')
             <!-- Pagination-->
             <nav class="d-flex justify-content-between pt-2" aria-label="Page navigation">
               <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="#"><i class="ci-arrow-left me-2"></i>Prev</a></li>
+                <li class="page-item"><a class="page-link" href="shop-grid-ft.php"><i class="ci-arrow-left me-2"></i>Prev</a></li>
               </ul>
               <ul class="pagination">
                 <li class="page-item d-sm-none"><span class="page-link page-link-static">1 / 5</span></li>
