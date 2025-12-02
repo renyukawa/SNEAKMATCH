@@ -252,7 +252,7 @@ if (file_exists($__lang_file)) {
               </div>
             </div>
             <div class="ms-3 text-nowrap"><a class="topbar-link me-4 d-none d-md-inline-block" href="order-tracking.html"><i class="ci-location"></i>Order tracking</a>
-              <div class="topbar-text dropdown disable-autohide"><a class="topbar-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><img class="me-2" src="img/flags/en.png" width="20" alt="English">Eng / $</a>
+              <div class="topbar-text dropdown disable-autohide"><a class="topbar-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><img class="me-2" src="img/flags/en.png" width="20" alt="英語">英語 / $</a>
                 <ul class="dropdown-menu dropdown-menu-end">
                   <li class="dropdown-item p-0">
                     <div class="currency-dropdown" style="width:100%">
@@ -263,11 +263,12 @@ if (file_exists($__lang_file)) {
                       <li class="dropdown-item p-0">
                         <div class="language-dropdown" style="width:100%">
                           <button type="button" class="lang-btn d-flex align-items-center w-100 px-2 py-1">
-                            <img class="me-2" src="img/flags/en.png" width="20" alt=""> <span class="lang-label">English</span>
+                            <img class="me-2" src="img/flags/en.png" width="20" alt="英語"> <span class="lang-label">英語</span>
+                            
                             <span class="ms-auto lang-arrow">▼</span>
                           </button>
                           <div class="lang-content">
-                            <a href="#" data-lang="en"><img class="me-2" src="img/flags/en.png" width="20" alt="">English</a>
+                            <a href="#" data-lang="en"><img class="me-2" src="img/flags/en.png" width="20" alt="英語">英語</a>
                             <a href="#" data-lang="ja"><img class="me-2" src="img/flags/jp.svg" width="20" alt="日本語">日本語</a>
                             <a href="#" data-lang="zh"><img class="me-2" src="img/flags/cn.svg" width="20" alt="中文">中文</a>
                           </div>
