@@ -145,19 +145,121 @@ button:hover{
 
 
 
-.product-grid-container {
-    /* 1. Use CSS Grid to organize the children */
-    display: grid; 
-    
-    /* 2. Create 4 equal-width columns */
-    /* repeat(4, 1fr) means 4 columns, each taking up an equal fraction of the available space */
-    grid-template-columns: repeat(4, 1fr); 
-    
-    /* 3. Add space between the rows and columns */
-    gap: 15px; /* Adjust this value for the spacing you want */
-    
-    /* 4. Match the dark background from the image */
-    background-color: #1a1a1a; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* In styles.css */
+:root {
+    --dark-bg: #111; /* Very dark background */
+    --light-text: #fff;
+    --secondary-text: #aaa;
+    --accent-green: #4CAF50; /* A dark green for the 'Buy' button */
+    --box-bg: #222; /* Slightly lighter dark for boxes/sections */
+}
+
+body {
+    font-family: Arial, sans-serif; /* Use a clean, simple font */
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: var(--light-text);
+    text-decoration: none;
+}
+
+
+.product-container {
+    display: flex;
+    max-width: 1200px; /* Limit max width for a cleaner look */
+    margin: 50px auto; /* Center the container */
     padding: 20px;
-    font-family: sans-serif;
+}
+
+.product-image-section {
+    flex: 3; /* Takes up about 60% of the space (adjust as needed) */
+    padding-right: 40px;
+}
+
+.product-details-section {
+    flex: 2; /* Takes up about 40% of the space */
+}
+
+
+.main-image-box {
+    background-color: #fff; /* White background for the main image area */
+    border-radius: 12px;
+    padding: 20px; /* Padding inside the white box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.main-image-box img {
+    width: 100%; /* Make the image fill its container */
+    display: block;
+    height: auto;
+}
+
+
+.product-title {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.price-box {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    border-top: 1px solid var(--box-bg); /* Subtle separator */
+}
+
+.price-and-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.price-value {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.buy-button {
+    background-color: var(--accent-green);
+    color: var(--light-text);
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.buy-button:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
 }
