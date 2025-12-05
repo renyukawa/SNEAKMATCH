@@ -425,10 +425,10 @@ require_once('file/functions.php')
                 </ul>
                 <!-- Primary menu-->
                 <ul class="navbar-nav">
-                  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="shop-grid-ft.php" data-bs-toggle="dropdown">Home</a>
+                  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="homepage.php" >Home</a>
                    
                   </li>
-                  <li class="nav-item dropdown active"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Shop</a>
+                  <li class="nav-item dropdown "><a class="nav-link dropdown-toggle" href="shop-grid-ft.php" >Shop</a>
                 
                   </li>
                   <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">Account</a>
