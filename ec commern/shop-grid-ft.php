@@ -460,7 +460,7 @@ require_once('file/header1.php')
               <!-- Product-->
               <div class="col-md-4 col-sm-6 px-2 mb-4">
                 <div class="card product-card">
-                  <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="ci-heart"></i></button><a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img src="NEXSOLE_sneaker/NX1.jpg" alt="Product"></a>
+                  <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="ci-heart"></i></button><a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img src="NEXSOLE_sneaker/NX.jpg" alt="Product"></a>
                   <div class="card-body py-2"><a class="product-meta d-block fs-xs pb-1" href="#">Sneakers &amp; Keds</a>
                     <h3 class="product-title fs-sm"><a href="shop-single-v1.html">Sneakers</a></h3>
                     <div class="d-flex justify-content-between">
@@ -497,7 +497,7 @@ require_once('file/header1.php')
               <!-- Product-->
                <div class="col-md-4 col-sm-6 px-2 mb-4">
                 <div class="card product-card">
-                  <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="ci-heart"></i></button><a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img src="NEXSOLE_sneaker/NX2.jpg" alt="Product"></a>
+                  <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="ci-heart"></i></button><a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img src="NEXSOLE_sneaker/NX.jpg" alt="Product"></a>
                   <div class="card-body py-2"><a class="product-meta d-block fs-xs pb-1" href="#">Sneakers &amp; Keds</a>
                     <h3 class="product-title fs-sm"><a href="shop-single-v1.html">Sneakers</a></h3>
                     <div class="d-flex justify-content-between">
@@ -571,7 +571,7 @@ require_once('file/header1.php')
               <!-- Product-->
               <div class="col-md-4 col-sm-6 px-2 mb-4">
                 <div class="card product-card">
-                  <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="ci-heart"></i></button><a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img src="NEXSOLE_sneaker/NX3.jpg" alt="Product"></a>
+                  <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="ci-heart"></i></button><a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img src="NEXSOLE_sneaker/NX.jpg" alt="Product"></a>
                   <div class="card-body py-2"><a class="product-meta d-block fs-xs pb-1" href="#">Sneakers &amp; Keds</a>
                     <h3 class="product-title fs-sm"><a href="shop-single-v1.html">Sneakers</a></h3>
                     <div class="d-flex justify-content-between">
@@ -608,7 +608,7 @@ require_once('file/header1.php')
               <!-- Product-->
               <div class="col-md-4 col-sm-6 px-2 mb-4">
                 <div class="card product-card">
-                  <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="ci-heart"></i></button><a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img src="NEXSOLE_sneaker/NX4.jpg" alt="Product"></a>
+                  <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="ci-heart"></i></button><a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img src="NEXSOLE_sneaker/NX.jpg" alt="Product"></a>
                   <div class="card-body py-2"><a class="product-meta d-block fs-xs pb-1" href="#">Sneakers &amp; Keds</a>
                     <h3 class="product-title fs-sm"><a href="shop-single-v1.html">Sneakers</a></h3>
                     <div class="d-flex justify-content-between">
@@ -645,7 +645,7 @@ require_once('file/header1.php')
               <!-- Product-->
               <div class="col-md-4 col-sm-6 px-2 mb-4">
                 <div class="card product-card">
-                  <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="ci-heart"></i></button><a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img src="NEXSOLE_sneaker/NX5.jpg" alt="Product"></a>
+                  <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="ci-heart"></i></button><a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img src="NEXSOLE_sneaker/NX.jpg" alt="Product"></a>
                   <div class="card-body py-2"><a class="product-meta d-block fs-xs pb-1" href="#">Sneakers &amp; Keds</a>
                     <h3 class="product-title fs-sm"><a href="shop-single-v1.html">Sneakers</a></h3>
                     <div class="d-flex justify-content-between">
@@ -693,7 +693,7 @@ require_once('file/header1.php')
               <!-- Product-->
               <div class="col-md-4 col-sm-6 px-2 mb-4">
                 <div class="card product-card">
-                  <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="ci-heart"></i></button><a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img src="NEXSOLE_sneaker/NX6.jpg" alt="Product"></a>
+                  <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="ci-heart"></i></button><a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img src="NEXSOLE_sneaker/NX.jpg" alt="Product"></a>
                   <div class="card-body py-2"><a class="product-meta d-block fs-xs pb-1" href="#">Sneakers &amp; Keds</a>
                     <h3 class="product-title fs-sm"><a href="shop-single-v1.html">Sneakers</a></h3>
                     <div class="d-flex justify-content-between">
@@ -730,7 +730,7 @@ require_once('file/header1.php')
               <!-- Product-->
               <div class="col-md-4 col-sm-6 px-2 mb-4">
                 <div class="card product-card">
-                  <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="ci-heart"></i></button><a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img src="NEXSOLE_sneaker/NX7.jpg" alt="Product"></a>
+                  <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="ci-heart"></i></button><a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img src="NEXSOLE_sneaker/NX.jpg" alt="Product"></a>
                   <div class="card-body py-2"><a class="product-meta d-block fs-xs pb-1" href="#">Sneakers &amp; Keds</a>
                     <h3 class="product-title fs-sm"><a href="shop-single-v1.html">Sneakers</a></h3>
                     <div class="d-flex justify-content-between">
@@ -767,7 +767,7 @@ require_once('file/header1.php')
               <!-- Product-->
               <div class="col-md-4 col-sm-6 px-2 mb-4">
                 <div class="card product-card">
-                  <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="ci-heart"></i></button><a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img src="NEXSOLE_sneaker/NX9.jpg" alt="Product"></a>
+                  <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="ci-heart"></i></button><a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img src="NEXSOLE_sneaker/NX.jpg" alt="Product"></a>
                   <div class="card-body py-2"><a class="product-meta d-block fs-xs pb-1" href="#">Sneakers &amp; Keds</a>
                     <h3 class="product-title fs-sm"><a href="shop-single-v1.html">Sneakers</a></h3>
                     <div class="d-flex justify-content-between">
@@ -804,7 +804,7 @@ require_once('file/header1.php')
               <!-- Product-->
                <div class="col-md-4 col-sm-6 px-2 mb-4">
                 <div class="card product-card">
-                  <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="ci-heart"></i></button><a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img src="NEXSOLE_sneaker/NX9.jpg" alt="Product"></a>
+                  <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="ci-heart"></i></button><a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img src="NEXSOLE_sneaker/NX.jpg" alt="Product"></a>
                   <div class="card-body py-2"><a class="product-meta d-block fs-xs pb-1" href="#">Sneakers &amp; Keds</a>
                     <h3 class="product-title fs-sm"><a href="shop-single-v1.html">Sneakers</a></h3>
                     <div class="d-flex justify-content-between">
