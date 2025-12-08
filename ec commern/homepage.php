@@ -132,24 +132,7 @@ require_once 'file/header1.php';
 
 
 
-<div class="award-container">
-    <div class="panel panel-left">
-        <img src="images/homeads3.png" alt="A pile of black athletic shoes" class="content-image">
-    </div>
 
-    <div class="panel panel-right">
-        <div class="tennis-content">
-            <div class="tennis-text-overlay">
-                <h1>Tennis Style Award</h1>
-                <p class="supported-by">Supported by</p>
-                <div class="fashion-snap">FASHIONSNAP</div>
-            </div>
-            <div class="submit-banner">
-                自分だけのテニススタイルを投稿しよう。
-            </div>
-        </div>
-    </div>
-</div>
 
 
 
