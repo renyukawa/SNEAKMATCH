@@ -110,11 +110,11 @@ require_once 'file/header1.php';
     --quantity: 8;
 ">
     <div class="list">
-        <div class="item" style="--position: 1"><img src="images/nikelogo.png" alt=""></div>
-        <div class="item" style="--position: 2"><img src="images/adidaslogo.png" alt=""></div>
-        <div class="item" style="--position: 3"><img src="images/convlogo.png" alt=""></div>
-        <div class="item" style="--position: 4"><img src="images/nblogo.jpg" alt=""></div>
-        <div class="item" style="--position: 5"><img src="images/OTlogo.png" alt=""></div>
+        <div class="item" style="--position: 1"><img src="images/RN.png" alt=""></div>
+        <div class="item" style="--position: 2"><img src="images/SX.png" alt=""></div>
+        <div class="item" style="--position: 3"><img src="images/NX.png" alt=""></div>
+        <div class="item" style="--position: 4"><img src="images/ND.png" alt=""></div>
+        <div class="item" style="--position: 5"><img src="images/H.png" alt=""></div>
         <div class="item" style="--position: 6"><img src="images/vanslogo.png" alt=""></div>
         <div class="item" style="--position: 7"><img src="images/erkelogo.png" alt=""></div>
         <div class="item" style="--position: 8"><img src="images/timberlandlogo.png" alt=""></div>
