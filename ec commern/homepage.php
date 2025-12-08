@@ -115,9 +115,9 @@ require_once 'file/header1.php';
         <div class="item" style="--position: 3"><img src="images/NX.png" alt=""></div>
         <div class="item" style="--position: 4"><img src="images/ND.png" alt=""></div>
         <div class="item" style="--position: 5"><img src="images/H.png" alt=""></div>
-        <div class="item" style="--position: 6"><img src="images/vanslogo.png" alt=""></div>
+        <!-- <div class="item" style="--position: 6"><img src="images/vanslogo.png" alt=""></div>
         <div class="item" style="--position: 7"><img src="images/erkelogo.png" alt=""></div>
-        <div class="item" style="--position: 8"><img src="images/timberlandlogo.png" alt=""></div>
+        <div class="item" style="--position: 8"><img src="images/timberlandlogo.png" alt=""></div> -->
         <!-- <div class="item" style="--position: 9"><img src="images/takopipp.png" alt=""></div> -->
     </div>
 </div>
