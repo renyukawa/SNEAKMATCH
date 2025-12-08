@@ -134,23 +134,20 @@ require_once 'file/header1.php';
 
 
 
-<div class="award-container">
-
-        <div class="panel panel-left">
+    <div class="split-container">
+        
+        <!-- LEFT IMAGE -->
+        <div class="left">
+            <img src="images/homeads3.jpg" alt="Shoes">
         </div>
 
-        <div class="panel panel-right">
-            <div class="tennis-content">
-                
-                <div class="tennis-text-overlay">
-                    <h1>Tennis Style Award</h1>
-                    <p class="supported-by">Supported by</p>
-                    <div class="fashion-snap">FASHIONSNAP</div>
-                </div>
-                
-                <div class="submit-banner">
-                    自分だけのテニススタイルを投稿しよう。
-                </div>
+        <!-- RIGHT IMAGE WITH TEXT -->
+        <div class="right">
+            <img src="right.jpg" alt="Tennis style">
+            <div class="text-overlay">
+                <h1>Tennis Style Award</h1>
+                <p>Supported by</p>
+                <h2>FASHIONSNAP</h2>
             </div>
         </div>
 
