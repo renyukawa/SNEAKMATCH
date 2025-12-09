@@ -133,7 +133,6 @@ require_once 'file/header1.php';
 
 
 
-
 <div class="split-container">
 
     <div class="column-content left-content">
@@ -143,13 +142,15 @@ require_once 'file/header1.php';
         <div class="text-area">
             <h2>Black Collection</h2>
             <p>ブラックでスタイリッシュに仕上げたシューズをご紹介</p>
-            <a href="#" class="button grey-button">一覧を見る</a>
+            <a href="#" class="button red-button">一覧を見る</a>
         </div>
     </div>
 
     <div class="column-content right-content">
         <div class="image-area">
             <img src="images/homeads2.jpg" alt="People playing tennis">
+            
+            <h2 class="overlay-text right-overlay-text">COURT STYLE</h2> 
             
             <div class="blue-bar">
                 <p class="promo-text">自分だけのテニススタイルを投稿しよう。</p>
@@ -160,13 +161,12 @@ require_once 'file/header1.php';
             </div>
         </div>
         <div class="text-area">
-            <h2>Tennis Style Award</h2>
-            <p>
+            <p class="description">
                 ファッションメディアFASHIONSNAPとともに、<br>
                 いま注目の「テニススタイル」をテーマにしたStyle Awardを開催<br>
                 <span class="disclaimer">※外部サイトに遷移します</span>
             </p>
-            <a href="#" class="button grey-button">詳細を見る</a>
+            <a href="#" class="button red-button">詳細を見る</a>
         </div>
     </div>
 </div>

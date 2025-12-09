@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI အဝတ်အစား ခွဲခြမ်းစိတ်ဖြာရေး</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for Inter font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+        }
+        /* Custom CSS for a better mobile experience */
+        .card {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease-in-out;
+        }
+        
+        /* === Animation Styles === */
+        .loading-dot {
+            animation: bounce 1s infinite alternate;
+        }
+        .loading-dot:nth-child(2) { animation-delay: 0.2s; }
+        .loading-dot:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-8px); }
+        }
+
+        /* Subtle Idle Animation (Breathing/Floating) */
+        .idle-float {
+            animation: float 3s ease-in-out infinite alternate;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-5px); }
+        }
+
+        /* Head Tilt Animation for extra life */
+        .head-tilt {
+            animation: tilt 4s ease-in-out infinite alternate;
+        }
+        @keyframes tilt {
+            0% { transform: translate(-50%, 0) rotate(1deg); } 
+            50% { transform: translate(-50%, 0) rotate(-1deg); }
+            100% { transform: translate(-50%, 0) rotate(1deg); }
+        }
+
+
+        /* Walking/Runway Animation for Presentation */
+        .runway-walk {
+            animation: walk 2s ease-in-out 1 forwards; /* Run once */
+        }
+        @keyframes walk {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(10px) rotate(-1deg); }
+            50% { transform: translateX(0); }
+            75% { transform: translateX(-10px) rotate(1deg); }
+            100% { transform: translateX(0); }
+        }
+        
+        /* Leg specific walk animation */
+        .runway-walk #mannequinLeftLeg, .runway-walk #mannequinRightLeg {
+            transform-origin: top center;
+        }
+        .runway-walk #mannequinLeftLeg {
+            animation: walk-leg-left 2s ease-in-out 1 forwards;
+        }
+        .runway-walk #mannequinRightLeg {
+            animation: walk-leg-right 2s ease-in-out 1 forwards;
+        }
+
+        @keyframes walk-leg-left {
+            0%, 50%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-8deg); }
+            75% { transform: rotate(8deg); }
+        }
+
+        @keyframes walk-leg-right {
+            0%, 50%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(8deg); }
+            75% { transform: rotate(-8deg); }
+        }
+
+        /* Arm specific walk animation */
+        .runway-walk #mannequinLeftArm, .runway-walk #mannequinRightArm {
+            transform-origin: top center;
+        }
+        .runway-walk #mannequinLeftArm {
+            animation: walk-arm-left 2s ease-in-out 1 forwards;
+        }
+        .runway-walk #mannequinRightArm {
+            animation: walk-arm-right 2s ease-in-out 1 forwards;
+        }
+
+        @keyframes walk-arm-left {
+            0%, 50%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(8deg); }
+            75% { transform: rotate(-8deg); }
+        }
+
+        @keyframes walk-arm-right {
+            0%, 50%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-8deg); }
+            75% { transform: rotate(8deg); }
+        }
+
+        /* Custom scrollbar for shoe selector */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.25.0"
+  }
+}
+</script>
+</head>
+<body class="p-4 sm:p-8 min-h-screen flex items-center justify-center bg-gray-100">
+    <div id="root"></div>
+</body>
+</html>
