@@ -135,24 +135,54 @@ require_once 'file/header1.php';
 
 
 <div class="split-container">
-    <div class="left">
-        <img src="images/homeads3.jpg" alt="Shoes">
-        <span class="overlay-text left-text">hiiii</span>
+
+    <div class="column-content left-content">
+        <div class="image-area">
+            <img src="images/homeads3.jpg" alt="Black New Balance Shoes Collection">
+        </div>
+        <div class="text-area">
+            <h2>Black Collection</h2>
+            <p>ブラックでスタイリッシュに仕上げたシューズをご紹介</p>
+            <a href="#" class="button grey-button">一覧を見る</a>
+        </div>
     </div>
 
-    <div class="right">
-        <img src="images/homeads2.jpg" alt="Tennis">
+    <div class="column-content right-content">
+        <div class="image-area">
+            <img src="images/homeads2.jpg" alt="People playing tennis">
+            
+            <div class="blue-bar">
+                <p class="promo-text">自分だけのテニススタイルを投稿しよう。</p>
+                <div class="logo-box">
+                    <span class="nb-logo-icon"></span> 
+                    <p class="brand-text">new balance</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-area">
+            <h2>Tennis Style Award</h2>
+            <p>
+                ファッションメディアFASHIONSNAPとともに、<br>
+                いま注目の「テニススタイル」をテーマにしたStyle Awardを開催<br>
+                <span class="disclaimer">※外部サイトに遷移します</span>
+            </p>
+            <a href="#" class="button grey-button">詳細を見る</a>
+        </div>
     </div>
 </div>
 
 
+<br>
+<br>
 
-
-
-
-
-
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
       
  <?php
