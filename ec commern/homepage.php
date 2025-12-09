@@ -122,7 +122,7 @@ require_once 'file/header1.php';
     </div>
 </div>
 
-
+<br>
 
 
 
@@ -134,24 +134,17 @@ require_once 'file/header1.php';
 
 
 
-    <div class="split-container">
-        
-        <!-- LEFT IMAGE -->
-        <div class="left">
-            <img src="images/homeads3.jpg" alt="Shoes">
-        </div>
-
-        <!-- RIGHT IMAGE WITH TEXT -->
-        <div class="right">
-            <img src="right.jpg" alt="Tennis style">
-            <div class="text-overlay">
-                <h1>Tennis Style Award</h1>
-                <p>Supported by</p>
-                <h2>FASHIONSNAP</h2>
-            </div>
-        </div>
-
+<div class="split-container">
+    <div class="left">
+        <img src="images/homeads3.jpg" alt="Shoes">
+        <span class="overlay-text left-text">hiiii</span>
     </div>
+
+    <div class="right">
+        <img src="images/homeads2.jpg" alt="Tennis">
+    </div>
+</div>
+
 
 
 
